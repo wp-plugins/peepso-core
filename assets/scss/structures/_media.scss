@@ -1,0 +1,169 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Media.scss
+//
+//////////////////////////////////////////////////
+
+
+%ps-media {
+	width: 100%;
+	@include media('medium') {
+		display: table;
+	}
+}
+
+
+/*  Media  */
+.ps-media {
+	background: rgba(0, 0, 0,.04);
+}
+
+.ps-media-thumbnail {
+	position: relative;
+	overflow: hidden;
+	background-color: black;
+
+	.play {
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		width: 50px;
+		height: 50px;
+		border: 3px solid white;
+		border-radius: 30px;
+		margin: -28px;
+		box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+
+		span {
+			position: absolute;
+			top: 10px;
+			left: 16px;
+			width: 0;
+			height: 0;
+			border-top: 12px solid transparent;
+			border-left: 20px solid white;
+			border-bottom: 12px solid transparent;
+		}
+	}
+
+	iframe {
+		margin-bottom: 0;
+	}
+
+	@include media('medium') {
+		display: table-cell;
+		vertical-align: middle;
+		width: 140px;
+		max-width: 140px;
+	}
+
+	.ps-stream-container-narrow & {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+
+		iframe {
+			@include media('medium') {
+				min-height: 250px;
+			}
+		}
+	}
+}
+
+.ps-media-body {
+	padding: $padding-base;
+	background: rgba(0, 0, 0,.04);
+	@include media('medium') {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	.ps-stream-container-narrow & {
+		display: block;
+	}
+}
+
+.ps-media-title {
+	margin-top: 0;
+	margin-bottom: $padding-small;
+	font-weight: bold;
+	small {
+		display: block;
+		font-weight: normal;
+	}
+}
+
+.ps-media-desc {
+	margin-bottom: 0;
+	color: $color-gray-dark;
+	font-size: $font-size-small;
+	line-height: $font-size-small*1.5;
+}
+
+
+/*  Media video  */
+.ps-media-video {
+	@extend %ps-media;
+
+	.ps-stream-container-narrow & {
+		display: block;
+	}
+}
+
+
+/*  Media album  */
+.ps-media-album {
+	@extend %ps-media;
+}
+
+
+/*  Media photo  */
+.ps-media-photos {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	max-width: 320px;
+
+	@include media('medium') {
+		max-width: 480px;
+	}
+}
+
+.ps-media-photo {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	float: left;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+
+	&:before {
+		position: absolute;
+		display: block;
+		content: '';
+		width: 100%;
+		height: 100%;
+		-webkit-box-shadow: inset 0 0 0 1px #FFF;
+		-moz-box-shadow: inset 0 0 0 1px #FFF;
+		box-shadow: inset 0 0 0 1px #FFF;
+	}
+
+	img {
+		display: block;
+		margin: 0 !important;
+		padding: 0 !important;
+		outline: none;
+	}
+}
+
+/*  Loading images on stream  */
+.photo-container-placeholder {
+	visibility: hidden;
+	height: 100px;
+	img {
+		display: none;
+	}
+}

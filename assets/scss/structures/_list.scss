@@ -1,0 +1,191 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: List.scss
+//
+//////////////////////////////////////////////////
+
+
+%ps-list {
+	list-style-type: none;
+	margin:0 !important;
+	padding:0 !important;
+}
+
+
+/*  List  */
+.ps-list,
+.ps-list-half,
+.ps-list-info,
+.ps-list-inline,
+.ps-list-column,
+.ps-list-thumbnail,
+.ps-list-alerts {
+	@extend %ps-list;
+	@extend %clearfix;
+}
+
+
+/*  List classic  */
+.ps-list-classic {
+	list-style-type: disc;
+	> li {
+		list-style-type: disc !important;
+	}
+}
+
+
+/*  List inline  */
+.ps-list-inline {
+	.ps-list-item {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+
+/*  List half  */
+.ps-list-half {
+	margin: -2px !important;
+}
+
+
+/*  List thumbnail  */
+.ps-list-thumbnail {
+	margin: -2px !important;
+
+	.ps-avatar {
+		max-width: 100px;
+		img {
+			max-width: 100px;
+			max-height: 100px;
+		}
+	}
+
+	@include media('large') {
+		.ps-avatar {
+			max-width: 64px;
+		}
+	}
+}
+
+
+/*  List item  */
+.ps-list-item {
+	padding: 0;
+	margin: 0;
+
+	/*  list half item  */
+	.ps-list-half & {
+		@if ($scss-direction == rtl) {
+			float: right;
+		} @else {
+			float: left;
+		}
+
+		width: 50%;
+		padding: 2px;
+		margin: 0;
+		border: none !important;
+	}
+	
+	/*  List thumbnail item  */
+	.ps-list-thumbnail & {
+		@if ($scss-direction == rtl) {
+			float: right;
+		} @else {
+			float: left;
+		}
+
+		width: 25%;
+		padding: 2px;
+		margin: 0;
+		border: none !important;
+	}
+}
+
+
+/*  List info  */
+.ps-list-info {
+	> li {
+		padding: 0;
+		margin: 0;
+	}
+
+	&-title {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		color: $color-gray;
+		font-size: $font-size-base !important;
+		font-weight: bold;
+	}
+
+	&-name {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		color: $color-gray-light;
+		font-size: $font-size-small !important;
+	}
+
+	&-content {
+		font-size: $font-size-small;
+		color: $color-gray-dark;
+	}
+}
+
+
+/*  List column  */
+.ps-list-column {
+	> li {
+		padding: $padding-base;
+		margin: 0;
+		border-bottom: 1px solid rgba(0,0,0,.08);
+		&:last-child {
+			border: none;
+		}
+	}
+}
+
+
+/*  List alerts  */
+.ps-list-alerts {
+	.ps-list-item {
+		@extend %clearfix;
+		padding-top: $padding-small/2;
+		padding-bottom: $padding-small/2;
+		font-size: 1.1rem;
+		@include media('medium') {
+			font-size: 1.2rem;
+		}
+	}
+
+	.ps-form-label {
+		display: block;
+		float: left;
+		width: 80%;
+	}
+
+	.submitel {
+		padding-top: $padding-large;
+		padding-left: 0;
+		padding-bottom: 0;
+	}
+}
+
+.ps-list-alerts-check {
+	@extend %clearfix;
+	display: table;
+	float: right;
+	width: 20%;
+	text-align: center;
+
+	span {
+		display: table-cell;
+		vertical-align: middle;
+		&:first-child {
+			padding-right: $padding-small;
+		}
+	}
+}

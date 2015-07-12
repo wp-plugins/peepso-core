@@ -1,0 +1,98 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Dropdown.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Dropdown  */
+.ps-dropdown,
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.ps-dropdown-toggle {
+}
+
+.ps-dropdown-menu,
+.dropdown-menu {
+	position: absolute;
+	z-index: map-get($zindex, dropdown);
+	top: 100%;
+	left: 0;
+	display: none;
+	min-width: 170px;
+	border: 1px solid #E3E5E7;
+	background-color: white;
+	text-align: left;
+	@extend %ps-list;
+	@extend %box-shadow;
+
+	> li {
+		padding: 0;
+		margin: 0;
+		a {
+			display: block;
+			padding: $padding-small;
+			font-size: $font-size-small;
+			line-height: $font-size-base;
+			&:hover, &:focus, &.active {
+				background-color: rgba(0,0,0,.05);
+			}
+		}
+	}
+
+	.open & {
+		display: block;
+	}
+}
+
+.ps-toolbar-menu .dropdown-menu {
+	@include media('small') {
+		position: relative;
+	}
+}
+
+/*  Dropdown right  */
+.ps-dropdown-right {
+	.ps-dropdown-menu,
+	.dropdown-menu {
+		left: auto;
+		right: 0;
+	}
+}
+
+
+/*  Dropdown stream & privacy  */
+.ps-dropdown-privacy {
+	.dropdown-menu {
+		min-width: 120px;
+	}
+}
+
+.ps-dropdown-privacy {
+	margin-left: $padding-small/2;
+	font-size: $font-size-small;
+	vertical-align: middle;
+}
+
+.ps-dropdown-stream {
+	.dropdown-menu {
+		left: auto;
+		right: 0;
+		min-width: 140px;
+	}
+}
+
+
+/*  Dropdown focus  */
+.ps-dropdown-focus {
+	.dropdown-menu {
+		left: auto;
+		right: 0;
+		min-width: 140px;
+	}
+}

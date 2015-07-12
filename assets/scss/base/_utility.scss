@@ -1,0 +1,176 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Utility.scss
+//
+//////////////////////////////////////////////////
+
+
+%clearfix {
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+%rounded {
+	-webkit-border-radius: $border-radius-large;
+	-moz-border-radius: $border-radius-large;
+	-o-border-radius: $border-radius-large;
+	border-radius: $border-radius-large;
+}
+
+%rounded--small {
+	-webkit-border-radius: $border-radius;
+	-moz-border-radius: $border-radius;
+	-o-border-radius: $border-radius;
+	border-radius: $border-radius;
+}
+
+%bordered {
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+%box-shadow {
+	-webkit-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+%box-shadow-dark {
+	-webkit-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+%circle {
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-o-border-radius: 100%;
+	border-radius: 100%;
+}
+
+
+/*  Content wrapper  */
+.ps-content-wrapper {
+	@extend %clearfix;
+	padding: 0;
+	background-color: white;
+}
+
+
+/*  Base padding  */
+.ps-padding {
+	padding: $padding-base;
+}
+
+
+/*  Floating  */
+.ps-left {
+	float: left;
+}
+
+.ps-right {
+	float: right;
+}
+
+.clearfix {
+	@extend %clearfix;
+}
+
+
+/*  Gap  */
+.ps-gap {
+	padding-top: $padding-small;
+	padding-bottom: $padding-small;
+}
+
+
+/*  Remove top & bottom margins  */
+.reset-gap {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+
+/*  Hidden  */
+.hidden {
+	display: none;
+}
+
+.block {
+	display: block;
+}
+
+
+/*  Responsive utilities  */
+.ps-hidden-mobile {
+	@include media('small') {
+		display: none !important;
+	}
+}
+
+.full {
+	width: 100% !important;
+}
+
+.full-mobile {
+	@include media('xsmall') {
+		width: 100% !important;
+	}
+}
+
+.half {
+	width: 50%;
+}
+
+
+/*  Icon  */
+.ps-icon {
+	position: relative;
+	top: -1px;
+	vertical-align: middle;
+	display: inline-block;
+	width: 15px;
+	height: 14px;
+	fill: $color-icon;
+}
+
+
+/*  Emoticon  */
+.ps-emoticon {
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+}
+
+
+/*  Notification counter  */
+.ps-notification-counter {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	padding: 1px 2px;
+	border-radius: $border-radius/1.5;
+	background-color: $color-danger;
+	color: white;
+	font-size: 0.9rem;
+	line-height: 1rem;
+}
+
+
+/*  Loading image  */
+.ps-loading-image {
+	@extend %clearfix;
+	text-align: center;
+}
+
+
+/*  Image preview  */
+.ps-image-preview {
+}

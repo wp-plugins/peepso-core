@@ -1,0 +1,25 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Button.scss
+//
+//////////////////////////////////////////////////
+
+
+@mixin button-variant($color, $background) {
+  color: $color;
+  background: $background;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $color;
+    background: lighten($background, 8%);
+  }
+
+  .ps-icon {
+  	fill: $color;
+  }
+}

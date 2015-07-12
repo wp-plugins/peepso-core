@@ -1,0 +1,92 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Members.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Members  */
+.ps-members {
+	@extend %clearfix;
+}
+
+.ps-members-list {
+	@extend %ps-list;
+}
+
+.ps-members-item {
+	position: relative;
+	display: table;
+	width: 100%;
+	margin-bottom: 2%;
+	border: 1px solid rgba(0,0,0,.05);
+	background-color: rgba(0,0,0,.05);
+
+	@include media('medium') {
+		float: left;
+		width: 48.6%;
+		margin-left: 2%;
+		&:first-child,
+		&:nth-child(2n+1) {
+			margin-left: 0;
+		}
+	}
+}
+
+.ps-members-item-avatar {
+	display: table-cell;
+	padding: $padding-small;
+	vertical-align: top;
+	.ps-avatar {
+		width: 64px;
+	}
+}
+
+.ps-members-item-body {
+	display: table-cell;
+	width: 100%;
+	padding-top: $padding-small;
+	padding-right: $padding-small;
+	padding-bottom: 20px;
+	vertical-align: middle;
+}
+
+.ps-members-item-title {
+	display: block;
+	margin-top: $padding-small/2;
+	margin-bottom: $padding-small;
+	font-size: $font-size-base;
+	line-height: $font-size-base;
+}
+
+.ps-members-item-status {
+	display: block;
+	color: $color-gray;
+	font-size: $font-size-small;
+	line-height: $font-size-small;
+}
+
+.ps-members-item-options {
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+	line-height: 0;
+	.ps-btn {
+		padding: 4px !important;
+		font-size: 1.2rem;
+		line-height: 1.2rem !important;
+		&:hover, &:focus {
+			padding: 4px !important;
+		}
+	}
+	.dropdown-menu {
+		left: auto;
+		right: 0;
+	}
+}
+
+.ps-members-scroll {
+	line-height: 0;
+}

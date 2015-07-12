@@ -1,0 +1,126 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Messages.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Messages  */
+.ps-messages {
+	@extend %clearfix;
+	position: relative;
+
+	.ps-avatar-comment {
+		vertical-align: middle;
+	}
+}
+
+.ps-messages-item {
+	background-color: rgba(0,0,0,.02);
+
+	.ps-comment-body {
+		font-size: $font-size-small;
+		line-height: $font-size-base;
+		cursor: pointer;
+	}
+
+	&.unread {
+		background-color: lighten($color-primary, 45%);
+	}
+}
+
+.ps-messages-check {
+	display: table-cell;
+	padding-right: $padding-base;
+	width: 20px;
+	vertical-align: middle;
+
+	input[type="checkbox"] {
+		margin: auto;
+		padding: 0;
+	}
+}
+
+.ps-messages-options {
+	display: table-cell;
+	width: 100%;
+
+	.ps-select {
+		width: auto;
+	}
+}
+
+.ps-messages-actions {
+	display: table;
+	width: 100%;
+	margin-bottom: $padding-base;
+
+	.ps-messages-check {
+		padding-left: $padding-base;
+	}
+}
+
+.ps-messages-sent {
+	.ps-avatar-comment {
+		display: none;
+	}
+
+	.ps-comment-body {
+		padding-left: 0;
+	}
+}
+
+
+/*  Messages conversation  */
+.ps-messages-chat {
+	.ps-comment-item {
+		padding-top: $padding-base;
+		padding-bottom: $padding-base;
+		background-color: rgba(0,0,0,.01);
+	}
+}
+
+.ps-messages-postbox {
+	.ps-postbox {
+		margin-bottom: 0;
+	}
+}
+
+.ps-messages-header {
+	width: 100%;
+	padding: $padding-base;
+	font-size: $font-size-small;
+	line-height: $font-size-base;
+	
+	@include media('medium') {
+		display: table;
+	}
+}
+
+.ps-messages-participants {
+	display: block;
+
+	@include media('medium') {
+		display: table-cell;
+	}
+}
+
+.ps-messages-add-users {
+	display: block;
+	margin-top: $padding-small;
+
+	@include media('medium') {
+		display: table-cell;
+		margin-top: 0;
+		text-align: right;
+	}
+}
+
+.ps-messages-recipients {
+	padding: $padding-base;
+	.ps-btn {
+		margin-top: $padding-small;
+	}
+}

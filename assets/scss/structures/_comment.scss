@@ -1,0 +1,191 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Comment.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Comment  */
+.ps-comment {
+	@extend %clearfix;
+	position: relative;
+	background-color: $comment-bg;
+}
+
+.ps-comment-item {
+	position: relative;
+	display: table;
+	width: 100%;
+	padding: $padding-small $padding-base;
+	border-top: 1px solid rgba(0,0,0,.1);
+	color: $color-gray-dark;
+}
+
+.ps-comment-body {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: $padding-small;
+	font-size: $font-size-base/1.1;
+
+	.ps-tagging-wrapper {
+		background-color: white;
+	}
+
+	.ps-textarea:focus {
+		border-width: 1px;
+	}
+
+	.ps-tagging-beautifier {
+		border: 1px solid transparent;
+		padding: 8.5px 25px 8.5px 8.5px;
+		line-height: 16px;
+	}
+}
+
+.ps-comment-message {
+	p {
+		display: inline;
+	}
+}
+
+.ps-comment-content {
+	p {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+}
+
+.ps-comment-links {
+	display: inline-block;
+	padding-left: $padding-small/2;
+	vertical-align: middle;
+
+	a > span {
+		display: none;
+	}
+
+	@include media('medium') {
+		a > span {
+			display: inline-block;
+		}
+	}
+}
+
+.ps-comment-user {
+	font-weight: bold;
+}
+
+.ps-comment-time {
+	color: $color-neutral;
+	small {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.ps-comment-options {
+	position: absolute;
+	top: $padding-small;
+	right: $padding-small;
+}
+
+.ps-comment-more {
+	padding: $padding-small $padding-base;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	font-size: $font-size-small;
+	line-height: $font-size-small;
+}
+
+.ps-comment-edit {
+	margin-bottom: $padding-small;
+	.ps-textarea-wrapper {
+		margin-bottom: $padding-small;
+	}
+}
+
+
+/*  Comment reply  */
+.ps-comment-reply {
+	position: relative;
+	display: table;
+	width: 100%;
+	padding: $padding-base;
+	border-top: 1px solid rgba(0,0,0,.04);
+	background-color: $comment-bg;
+
+	.ps-comment-send,
+	.ps-textarea-wrapper {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.ps-comment-send {
+		@include media('medium') {
+			width: 115px;
+		}
+	}
+
+	.ps-avatar {
+		display: none;
+		width: 32px;
+		vertical-align: middle;
+		img {
+			width: auto;
+			max-width: 32px;
+			padding: 0;
+			border-color: transparent;
+		}
+
+		@include media('medium') {
+			display: table-cell;
+		}
+	}
+
+	.ps-textarea-wrapper {
+		@include media('medium') {
+			padding-left: $padding-base;
+		}
+	}
+
+	.ps-textarea {
+		min-height: 35px;
+		line-height: 16px;
+		resize: none;
+		transition: none !important;
+		&:focus {
+			border-width: 1px;
+		}
+	}
+
+	.textntags-wrapper {
+		height: 35px;
+	}
+
+	.ps-button-cancel {
+		display: none;
+
+		@include media('medium') {
+			display: inline-block;
+		}
+	}
+
+	.ps-tagging-wrapper {
+		background-color: white;
+	}
+
+	.ps-tagging-beautifier {
+		border: 1px solid transparent;
+		padding: 8.5px 25px 8.5px 8.5px;
+		line-height: 16px;
+	}
+}
+
+.ps-comment-actions {
+	text-align: right;
+}
+
+.ps-comment-loading {
+	padding-left: $padding-small;
+}

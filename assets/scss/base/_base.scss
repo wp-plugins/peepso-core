@@ -1,0 +1,87 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Base.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  PeepSo Container  */
+.peepso {
+	position: relative;
+	height: 100%;
+	min-height: 480px;
+	padding: $padding-base;
+	background-color: $color-bg;
+	font-size: $font-size;
+	line-height: 1.4rem;
+
+	p {
+		font-size: $font-size-small;
+	}
+
+	a {
+		border-bottom: none !important;
+		color: $color-link !important;
+		text-decoration: none !important;
+		outline: none;
+		&:hover, &:focus, &.active {
+			color: $color-link-hover !important;
+			text-decoration: none !important;
+			outline: none;
+		}
+	}
+
+	small {
+		font-size: 1rem;
+	}
+
+	.ps-btn {
+		padding: $padding-small;
+		border: 1px solid rgba(0,0,0,0.1) !important;
+		color: $color-neutral !important;
+		font-weight: normal;
+		text-transform: none;
+		-moz-hyphens: none;
+		word-wrap: normal;
+		&:hover, &:focus, &.active {
+			padding: $padding-small;
+			color: black !important;
+		}
+	}
+
+	.ps-button-action,
+	.ps-btn-primary,
+	.ps-btn-success,
+	.ps-btn-warning,
+	.ps-btn-danger,
+	.ps-btn-login,
+	.ps-btn-join {
+		padding: $padding-small;
+		color: white !important;
+		&:hover, &:focus, &.active {
+			padding: $padding-small;
+			color: white !important;
+		}
+	}
+
+	.ps-btn-small {
+		padding: 6px $padding-small;
+		&:hover, &:focus, &.active {
+			padding: 6px $padding-small;
+		}
+	}
+
+	* {
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	}
+
+	> *:last-child {
+		margin-bottom: 0 !important;
+	}
+
+	@if $scss-direction == rtl {
+		text-align: right !important;
+	}
+}

@@ -1,0 +1,32 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Video.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Video  */
+.ps-video {
+	@extend %clearfix;
+	margin: -2px;
+}
+
+.ps-video-item {
+	float: left;
+	width: 50%;
+	padding: 2px;
+}
+
+.ps-lightbox-object {
+	iframe {
+		display: inline-block;
+	}
+
+	@include media('large') {
+		iframe {
+			height: 100%;
+		}
+	}
+}
