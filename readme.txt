@@ -41,7 +41,7 @@ This plugin gives users the option to share how they feel. It attaches the mood 
 
 There are more plugins under development and those will also be released in the future and fully not only supporting but extending the possibilities of PeepSo core.
 
-All of the plugins supporting the PeepSo core are available on http://peepso.com 
+All of the plugins supporting the PeepSo core are available on http://www.peepso.com 
 
 
 == Installation ==
@@ -75,30 +75,28 @@ Yes! PeepSo was designed from the beginning to be used with your existing theme 
 
 You can use the Support Forums here on the <a href="https://wordpress.org/plugins/peepso-core/">WordPress website</a> 
 
-Or on our support forum here on <a href="https://www.peepso.com/support/“>PeepSo.com</a> 
+Or on our support forum here on <a href="https://www.peepso.com/support/">PeepSo.com</a> 
 
 = Is there documentation available for PeepSo? =
 
-Yes! You can find documentation on the use of PeepSo and designing themes and extensions for PeepSo at <a href="https://www.peepso.com/docs/“>PeepSo Docs</a>  
+Yes! You can find documentation on the use of PeepSo and designing themes and extensions for PeepSo at <a href="https://www.peepso.com/docs/">PeepSo Docs</a>  
 
 = How do I report a bug/problem with PeepSo? =
 
-You can use the Support Forums here on the <a href="https://wordpress.org/plugins/peepso-core/“>WordPress website</a> 
+You can use the Support Forums here on the <a href="https://wordpress.org/plugins/peepso-core/">WordPress website</a> 
 
-Or on our support forum here on <a href="https://www.peepso.com/support/“>PeepSo.com</a> 
-
-
+Or on our support forum here on <a href="https://www.peepso.com/support/">PeepSo.com</a> 
 
 == Screenshots ==
 
-1. Profile.
-2. Notifications
-3. Member Search
-4. Edit Profile
-5. Dashboard
-6. Change Avatar
-7. Privacy
-8. Settings
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
 
 == Changelog ==
 
