@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== PeepSo ===
 Contributors: PeepSo, SpectrOMtech, davejesch
 Donate link: http://www.peepso.com
 Tags: social networking community 
