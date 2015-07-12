@@ -1,0 +1,117 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Dialog.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Dialog  */
+.ps-dialog {
+	@extend %rounded;
+	@extend %box-shadow-dark;
+
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	vertical-align: middle;
+	border: 1px solid #C0C0C0;
+	background-color: white;
+
+	.ps-postbox {
+		margin-bottom: 0;
+	}
+
+	@include media('medium') {
+		width: 400px;
+	}
+}
+
+.ps-dialog-wide {
+	@include media('large') {
+		width: 600px;
+	}
+}
+
+.ps-dialog-wrapper {
+	position: fixed;
+	z-index: map-get($zindex, dialog);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+.ps-dialog-container {
+	width: 100%;
+	height: 100%;
+	padding-bottom: 80%;
+	&:before {
+		display: inline-block;
+		content: '';
+		height: 100%;
+		vertical-align: middle;
+	}
+
+	@include media('medium') {
+		padding-bottom: 0;
+	}
+}
+
+.ps-dialog-header {
+	@extend %clearfix;
+
+	padding: $padding-small $padding-base;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	background-color: #111;
+	color: white;
+	font-size: $font-size-base;
+	text-align: left;
+}
+
+.ps-dialog-title {
+	float: left;
+	display: block;
+	font-weight: bold;
+}
+
+.ps-dialog-close {
+	float: right;
+	display: block;
+	span {
+		color: #888;
+		&:hover, &:focus {
+			color: white;
+		}
+	}
+}
+
+.ps-dialog-body {
+	@extend %clearfix;
+
+	overflow-y: scroll;
+	padding: $padding-base;
+	max-height: 225px;
+	font-size: $font-size-base;
+	text-align: left;
+
+	@include media('large') {
+		max-height: none;
+		overflow-y: visible;
+	}
+}
+
+.ps-dialog-footer {
+	padding: $padding-small $padding-base;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background-color: #F6F6F6;
+	text-align: right;
+
+	&:empty {
+		display: none;
+	}
+}

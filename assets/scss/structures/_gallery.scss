@@ -1,0 +1,79 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Gallery.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Gallery  */
+.ps-gallery {
+	@extend %clearfix;
+}
+
+.ps-gallery-item {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	width: 47.5%;
+	margin-left: 2.2%;
+	margin-bottom: 2.65%;
+	vertical-align: top;
+
+	@include media('small') {
+		&:first-child,
+		&:nth-child(2n+1) {
+			margin-left: 0;
+		}
+	}
+
+	@include media('medium') {
+		width: 22.5%;
+
+		&:first-child,
+		&:nth-child(4n+1) {
+			margin-left: 0;
+		}
+	}
+}
+
+.ps-gallery-thumbnail {
+	position: relative;
+	display: block;
+	max-width: 128px;
+	margin: auto auto 4px;
+	text-align: center;
+
+	img {
+		width: 100%;
+		max-width: 128px;
+		padding: 0;
+		border: 0;
+		opacity: 0;
+		vertical-align: middle;
+
+		&.loaded {
+			opacity: 1;
+			-webkit-transition: opacity 1s;
+			-moz-transition: opacity 1s;
+			transition: opacity 1s;
+		}
+	}
+}
+
+.ps-gallery-overlay {
+	position: absolute;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	&:hover, &:focus, &.active {
+		background-color: rgba(0,0,0,.4)
+	}
+}
+
+.ps-gallery-scroll {
+	line-height: 0;
+}

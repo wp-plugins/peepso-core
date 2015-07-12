@@ -1,0 +1,71 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Tab.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Tab  */
+.ps-tab {
+}
+
+.ps-tab-bar {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	margin-bottom: $padding-base;
+	background-color: $tab-bg;
+
+	> a {
+		display: table-cell;
+		padding: $padding-small;
+		color: $tab-color !important;
+		font-size: $font-size-small;
+		line-height: $font-size-small*1.7;
+		text-decoration: none;
+		text-align: center;
+		&.active {
+			background-color: $tab-bg-active;
+			font-weight: bold;
+			&:hover, &.active {
+				color: $tab-color !important;
+				text-decoration: none;
+			}
+		}
+		&:hover, &:focus {
+			color: lighten($tab-color, 8%) !important;
+			text-decoration: none;
+		}
+	}
+
+	h2 {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		font-size: $font-size-small !important;
+		line-height: $font-size-small*1.7 !important;
+	}
+}
+
+.ps-tab-content {
+	@extend %clearfix;
+	padding: $padding-base;
+	background-color: $tab-bg-content;
+	color: $color-gray-dark;
+}
+
+.tab-pane {
+	display: none;
+	&.active {
+		display: block;
+	}
+}
+
+.ps-page {
+	.ps-tab-bar {
+		> a.active {
+			background-color: rgba(255,255,255,.5);
+		}
+	}
+}

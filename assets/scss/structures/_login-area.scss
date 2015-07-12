@@ -1,0 +1,142 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Login-Area.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Login area  */
+.ps-landing {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: $padding-base;
+}
+
+.ps-landing-cover {
+	position: relative;
+	height: 0;
+	padding-top: 65%;
+
+	@include media('medium') {
+		padding-top: 38%;
+	}
+}
+
+.ps-landing-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.ps-landing-content {
+	position: absolute;
+	z-index: map-get($zindex, base);
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: $padding-base;
+	background-color: rgba(0,0,0,.4);
+	color: white;
+
+	@include media('medium') {
+		display: table;
+	}
+}
+
+.ps-landing-text {
+	padding-right: $padding-base;
+
+	h2 {
+		padding: 0;
+		margin-top: $padding-base !important;
+		margin-bottom: $padding-base !important;
+		color: white !important;
+		font-size: $font-size-large*1.1 !important;
+		line-height: $font-size-large*1.1 !important;
+	}
+
+	p {
+		margin-top: 0;
+		margin-bottom: $padding-base !important;
+		font-size: $font-size-small;
+	}
+
+	@include media('small') {
+		h2 { display: none }
+		p { display: none }
+	}
+
+	@include media('large') {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+.ps-landing-signup {
+	.ps-btn-join {
+		width: 100%;
+	}
+
+	@include media('large') {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: right;
+		.ps-btn-join { width: auto}
+	}
+}
+
+.ps-landing-action {
+	padding: $padding-base;
+	border-bottom-left-radius: $border-radius-large;
+	border-bottom-right-radius: $border-radius-large;
+	background-color: white;
+
+	.ps-form-input,
+	.ps-btn-login,
+	.ps-input {
+		width: 100%;
+		margin-top: 0;
+		margin-bottom: $padding-small/1.2;
+		vertical-align: top;
+	}
+
+	.ps-link {
+		display: block;
+		margin-top: $padding-small;
+		font-size: $font-size-small;
+	}
+
+	@include media('medium') {
+		.ps-checkbox {
+			display: inline-block;
+			margin-right: 2%;
+		}
+
+		.ps-link {
+			display: inline-block;
+			margin-top: 0;
+			margin-right: 2%;
+		}
+	}
+
+	@include media('large') {
+		.ps-form-input {
+			width: 35%;
+			margin-right: 2%;
+		}
+
+		.ps-input { width: 100%; }
+
+		.ps-btn-login { width: 24.5%; }
+	}
+}

@@ -1,0 +1,130 @@
+//
+//  PeepSo
+//  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+//
+//  File: Main-Layout.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Main body  */
+.ps-body {
+	@extend %clearfix;
+}
+
+.ps-main {
+	width: 100%;
+	@include media('large') {
+		@if ($scss-stream-position == left) {
+			float: left;
+			padding-left: 0;
+			padding-right: $padding-base;
+		}
+
+		@else {
+			float: left;
+			padding-left: $padding-base;
+		}
+
+		width: $primary-width;
+	}
+}
+
+.ps-main-full {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+/*  Sidebar  */
+.ps-sidebar {
+	width: 100%;
+	@include media('large') {
+		@if ($scss-stream-position == left) {
+			float: right;
+			padding-right: 0;
+		}
+
+		@else {
+			float: left;
+		}
+
+		width: $secondary-width;
+	}
+}
+
+
+/*  Page  */
+.ps-page {
+	@extend %clearfix;
+	position: relative;
+	padding: $padding-base;
+	background-color: white;
+}
+
+.ps-page-unstyled {
+	@extend %clearfix;
+	position: relative;
+	padding: 0;
+	background-color: white;
+}
+
+.ps-page-title {
+	padding: 0;
+	margin-top: 0 !important;
+	margin-bottom: $padding-base !important;
+	color: $color-gray;
+	font-size: 1.6rem !important;
+	&-single {
+		padding: 0;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		color: $color-gray;
+		font-size: 1.6rem !important;
+	}
+}
+
+.ps-page-filters {
+	margin-bottom: $padding-large;
+}
+
+.ps-page-actions {
+	position: absolute;
+	top: $padding-base;
+	right: $padding-base;
+}
+
+.ps-page-footer {
+	margin-top: $padding-base;
+}
+
+
+/*  Page split  */
+.ps-page-split {
+	display: block;
+	width: 100%;
+	table-layout: fixed;
+
+	@include media('medium') {
+		display: table;
+	}
+}
+
+.ps-page-half {
+	display: block;
+	&.show-thumbnail {
+		vertical-align: middle;
+	}
+	&:first-child {
+		padding-right: 14px;
+	}
+	&:last-child {
+		padding: 14px;
+		background-color: #F6F6F6;
+	}
+
+	@include media('medium') {
+		display: table-cell;
+	}
+}
