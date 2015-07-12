@@ -16,8 +16,6 @@ PeepSo is an application that provides Social Networking features for your web s
 
 PeepSo core is a free plugin which possibilities can be extended by a number of supporting plugins developed and maintained by the same team that brought you PeepSo.
 
-== Add-ons ==
-
 = FriendSo =
 This plugin allows friend connections between users. Also introduces a new privacy level ‘Friends Only’ which allows to share information only with friends and not entire community.
 
@@ -63,37 +61,31 @@ All of the plugins supporting the PeepSo core are available on http://peepso.com
 3. Go to Plugins > ‘Add New’.
 4. Select ‘Upload Plugin’.
 5. Select the ZIP installation file of PeepSo.
-6. Activate plugin.
+6. Activate PeepSo from your Plugins page.
 
-
-Using the WordPress Plugin Directory in the backend of your website
-Navigate to the backend area of your site.
-Go to Plugins > ‘Add New’ 
-Use the search field and look for ‘PeepSo’.
-When it shows amongst the results click ‘Install Now’
 
 == Frequently Asked Questions ==
 
 = Can I use my existing theme? =
 
-Yes! PeepSo was designed from the beginning to be used with your existing theme and does not require a theme designed to work with PeepSo. We have tested PeepSo with several themes and Frameworks already but your theme may require some customization. You can do this by copying template files into a `peepso/` directory within your theme folder and modifying them. Please see our guide at http://www.peepso.com/customizing-peepso-for-your-theme/ for more information on customizing PeepSo.
+Yes! PeepSo was designed from the beginning to be used with your existing theme and does not require a theme designed to work with PeepSo. We have tested PeepSo with several themes and Frameworks already but your theme may require some customization. You can do this by copying template files into a `peepso/` directory within your theme folder and modifying them.
 
 
 = Where do I get support for PeepSo? =
 
 You can use the Support Forums here on the <a href="https://wordpress.org/plugins/peepso-core/">WordPress website</a> 
 
-Or on our support forum here on <a href="https://www.peepso.com/support”>PeepSo.com</a> 
+Or on our support forum here on <a href="https://www.peepso.com/support/“>PeepSo.com</a> 
 
 = Is there documentation available for PeepSo? =
 
-Yes! You can find documentation on the use of PeepSo and designing themes and extensions for PeepSo at <a href="https://www.peepso.com/docs”>PeepSo Docs</a>  
+Yes! You can find documentation on the use of PeepSo and designing themes and extensions for PeepSo at <a href="https://www.peepso.com/docs/“>PeepSo Docs</a>  
 
 = How do I report a bug/problem with PeepSo? =
 
-You can use the Support Forums here on the <a href="https://wordpress.org/plugins/peepso-core/">WordPress website</a> 
+You can use the Support Forums here on the <a href="https://wordpress.org/plugins/peepso-core/“>WordPress website</a> 
 
-Or on our support forum here on <a href="https://www.peepso.com/support”>PeepSo.com</a> 
+Or on our support forum here on <a href="https://www.peepso.com/support/“>PeepSo.com</a> 
 
 
 
