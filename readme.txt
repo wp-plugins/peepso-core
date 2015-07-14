@@ -41,7 +41,9 @@ PeepSo core is a **free plugin** which possibilities can be extended by a number
 
 More plugins are currently being developed to extand PeepSo's functionality.
 
-All of the plugins supporting the PeepSo core are available on [PeepSo.com](http://peepso.com/ "PeepSo - Social Network Plugin for WordPress") == Installation ==
+All of the plugins supporting the PeepSo core are available on [PeepSo.com](http://peepso.com/ "PeepSo - Social Network Plugin for WordPress") 
+
+== Installation ==
 
 = From your WordPress dashboard =
 
