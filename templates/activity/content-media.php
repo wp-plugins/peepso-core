@@ -1,14 +1,11 @@
 <div class="ps-media-video">
+	<?php if (isset($content)) { ?>
 	<div class="ps-media-thumbnail video-avatar">
-	<?php
-	if (isset($content)) { 
-	?>
 		<div class="<?php peepso('activity', 'content-media-class', 'media-object'); ?>">
-	 			<?php echo ($content); ?>
-	 	</div>
-	<?php 
-	} ?>
+			<?php echo ($content); ?>
+		</div>
 	</div>
+	<?php } ?>
 	<div class="ps-media-body video-description">
 		<!-- video description -->
 		<div class="ps-media-title">

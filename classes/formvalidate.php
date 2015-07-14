@@ -29,6 +29,7 @@ class PeepSoFormValidate
 			'alphanumeric' => __('This field only accepts alphanumeric characters.', 'peepso'),
 			'alpha' => __('This field only accepts alpha letters.', 'peepso'),
 			'name' => __('This field only accepts alpha letters, spaces, dashes(-), and apostrophes(\').', 'peepso'),
+			'name-utf8' => __('This field accepts all letters and numbers except for HTML code.', 'peepso'),
 			'past' => __('Please enter a date in the past.', 'peepso'),
 			'maxlen' => __('This field is too long, should be no more than %d characters.', 'peepso'),
 			'minlen' => __('This field is too short, should be at least %d characters.', 'peepso'),
@@ -78,6 +79,9 @@ class PeepSoFormValidate
 		case 'name':
 			$comp = str_replace(array(' ', '-', '\''), '', $value); // allow spaces, dash and apostrophe
 			return (empty($comp) ? TRUE : ctype_alpha($comp));
+		case 'name-utf8':
+			$value = strip_tags(html_entity_decode($value));
+			return (strlen($value) ? TRUE : FALSE);
 		case 'maxlen':
 			return (strlen($value) <= intval($this->param) ? TRUE : FALSE);
 		case 'minlen':

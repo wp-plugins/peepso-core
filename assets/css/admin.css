@@ -252,3 +252,52 @@ background-color: #8ab2c9;
 	width: 16px;
 	height: 16px;
 }
+
+/* PeepSo plugins check */
+.plugins-table {
+  width: 100%;
+}
+
+.plugins-item-img {
+  text-align: center;
+}
+
+.plugins-item-body {
+  margin-bottom: 15px;
+}
+
+.plugins-item-action .btn {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .plugins-table {
+    display: table;
+  }
+
+  .plugins-item-img {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    width: 25%;
+  }
+
+  .plugins-item-img img {
+    padding-right: 25px !important;
+  }
+
+  .plugins-item-body {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .plugins-item-action {
+    display: table-cell;
+    vertical-align: middle;
+    width: 20%;
+  }
+
+  .plugins-item-action .btn {
+    width: auto;
+  }
+}

@@ -130,6 +130,7 @@ class PeepSoConfigSections extends PeepSoConfigSectionAbstract
 	{
 		$section = 'site_frontpage_';
 
+		/*
 		$title = array(
 			'name' => $section . 'title',
 			'label' => __('Front Page Title', 'peepso'),
@@ -138,9 +139,10 @@ class PeepSoConfigSections extends PeepSoConfigSectionAbstract
 			'field_label_class' => 'control-label col-sm-4',
 			'value' => PeepSo::get_option($section . 'title')
 		);
+		*/
 
 		$options = array(
-			'activity' => __('Activitiy Stream', 'peepso'),
+			'activity' => __('Activity Stream', 'peepso'),
 			'profile' => __('Profile', 'peepso'),
 		);
 		$options = apply_filters('peepso_admin_login_redirect_options', $options);
@@ -179,7 +181,7 @@ class PeepSoConfigSections extends PeepSoConfigSectionAbstract
 			'name' => 'frontpage',
 			'title' => __('Front Page Settings', 'peepso'),
 			'description' => __('These settings control the appearance of the Front Page of the site.', 'peepso'),
-			'fields' => array($title, $redirectlogin),
+			'fields' => array(/*$title,*/ $redirectlogin),
 			'context' => 'right'			
 		));
 	}

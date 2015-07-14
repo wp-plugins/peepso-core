@@ -1,14 +1,4 @@
 <?php
-
-/*
- * @copyright Copyright (C) 2014 iJoomla, Inc. - All Rights Reserved.
- * @license GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
- * @author PeepSo.com <webmaster@peepso.com>
- * @url https://www.peepso.com/license-agreement
- * The PHP code portions are distributed under the GPL license. If not otherwise stated, all images, manuals, cascading style sheets, and included JavaScript *are NOT GPL, and are released under the iJoomla Proprietary Use License v1.0
- * More info at https://www.peepso.com/license-agreement/
- */
-
 /*
  * Performs tasks for Admin page requests
  * @package PeepSo
@@ -273,7 +263,7 @@ PeepSo::log('inside PeepSoAdmin::dashboard()');
 		$wp_styles->add_data('ace-admin-ie', 'conditional', 'IE 7');
 		wp_register_style('peepso-admin', PeepSo::get_asset('css/admin.css'), NULL, PeepSo::PLUGIN_VERSION, 'all');
 
-		wp_register_script('peepso', PeepSo::get_asset('js/peepso.js'),
+		wp_register_script('peepso', PeepSo::get_asset('js/peepso.min.js'),
 			array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
 
 		wp_register_script('peepso-admin-config', PeepSo::get_asset('js/peepso-admin-config.js'),
@@ -291,7 +281,7 @@ PeepSo::log('inside PeepSoAdmin::dashboard()');
 		wp_enqueue_script('peepso');
 
 		wp_enqueue_style('peepso', PeepSo::get_template_asset(NULL, 'css/peepso.css'), NULL, PeepSo::PLUGIN_VERSION, 'all');
-		wp_register_script('peepso-window', PeepSo::get_asset('js/pswindow.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
+		wp_register_script('peepso-window', PeepSo::get_asset('js/pswindow.min.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
 
 		wp_localize_script('peepso-window', 'peepsowindowdata', array(
 			'label_confirm' => __('Confirm', 'peepso'),
@@ -715,11 +705,18 @@ PeepSo::log(__METHOD__.'() views: ' . var_export($views, TRUE));
 				'callback' => array(&$this, 'engagement_metabox'),
 				'context' => 'left'
 			),
+
+			array(
+				'name' => 'child_plugins',
+				'title' => __('PeepSo Plugins', 'peepso'),
+				'callback' => array(&$this, 'child_plugins'),
+				'context' => 'right'
+			),
 			array(
 				'name' => 'most_recent',
 				'title' => __('Most Recent Content', 'peepso'),
 				'callback' => array(&$this, 'recent_metabox'),
-				'context' => 'right'
+				'context' => 'left'
 			),
 			array(
 				'name' => 'demographic',
@@ -1051,6 +1048,80 @@ PeepSo::log(__METHOD__.'() views: ' . var_export($views, TRUE));
 				<i class="fa fa-arrow-right"></i>
 			</a>
 		</div>', PHP_EOL;
+	}
+
+	private static function plugin_exists($filename, $class)
+	{
+		if(class_exists($class)) {
+			return true;
+		}
+	}
+	/*
+	 * Displays the "child plugins" metabox
+	 */
+	public function child_plugins()
+	{
+		if(isset($_GET['nocache_dashboard_plugins'])) {
+			delete_transient('peepso_plugins');
+		}
+
+		if (NULL == $response = get_transient('peepso_plugins')) {
+
+			$url = PeepSo::PEEPSO_INTEGRATION_JSON_URL . '/peepso_dashboard_plugins.json';
+
+			echo '<!--Fetching' , $url , '-->';
+
+			$resp = wp_remote_get(add_query_arg(array(), $url), array('timeout' => 15, 'sslverify' => FALSE));
+
+			if (!is_wp_error($resp)) {
+				$response = wp_remote_retrieve_body($resp);
+			}
+
+			set_transient('peepso_plugins', $response, 1 * HOUR_IN_SECONDS);
+		}
+
+		if(!strlen($response) || !($plugins = json_decode($response, true))) {
+			echo "Sorry, there has been an error fetching available plugins";
+		}
+
+		$plugins = array_pop($plugins);
+		foreach ($plugins as $class=>$plugin) {
+
+			if(self::plugin_exists($plugin['file'], $class)) {
+				echo '<div class="list-group-item">';
+			} else {
+				echo '<div class="list-group-item list-group-item-info">';
+			}
+
+					echo '<div class="plugins-table">
+							<div class="plugins-item-img">
+								<img src="' , $plugin['logo'] ,'" />
+							</div>
+
+							<div class="plugins-item-body">
+								<h4><strong>' , $plugin['title'] , '</strong></h4>
+								<p>' , $plugin['html'] ,'</p>
+							</div>
+
+							<div class="plugins-item-action text-right">';
+
+						if(stristr($plugin['title'],'bundle')) {
+							echo '<a class="btn btn-primary" target="_blank" href="'.$plugin['link'].'">' , __('View now!', 'peepso'),'</a>';
+						} else {
+
+							if(self::plugin_exists($plugin['file'], $class)) {
+								echo '<a class="btn disabled" href="#">installed</a>';
+							} else {
+								echo '<a class="btn btn-primary" target="_blank" href="https://www.peepso.com/checkout?edd_action=add_to_cart&download_id=' , $plugin['product-id'] ,'">' , __('Get it now!', 'peepso'),'</a>';
+							}
+						}
+
+						echo '</div>
+
+						</div>
+					</div>';
+
+		}
 	}
 
 	/*

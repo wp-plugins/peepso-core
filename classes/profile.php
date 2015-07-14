@@ -914,6 +914,8 @@ PeepSo::log(__METHOD__.'() num_blocked=' . $this->num_blocked);
 				'required' => 1,
 				'type' => 'text',
 				'validation' => array(
+					'alphanumeric',
+					'required',
 					'minlen:' . PeepSoUser::USERNAME_MINLEN,
 					'maxlen:' . PeepSoUser::USERNAME_MAXLEN,
 					'custom'
@@ -931,7 +933,7 @@ PeepSo::log(__METHOD__.'() num_blocked=' . $this->num_blocked);
 				'required' => 1,
 				'type' => 'text',
 				'validation' => array(
-					'name',
+					'name-utf8',
 					'minlen:' . PeepSoUser::FIRSTNAME_MINLEN,
 					'maxlen:' . PeepSoUser::FIRSTNAME_MAXLEN
 				),
@@ -944,7 +946,7 @@ PeepSo::log(__METHOD__.'() num_blocked=' . $this->num_blocked);
 				'required' => 1,
 				'type' => 'text',
 				'validation' => array(
-					'name',
+					'name-utf8',
 					'minlen:' . PeepSoUser::LASTNAME_MINLEN,
 					'maxlen:' . PeepSoUser::LASTNAME_MAXLEN
 				),

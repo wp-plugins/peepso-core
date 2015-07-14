@@ -5,6 +5,8 @@ class PeepSoLicense
     const PEEPSO_HOME = 'http://peepso.com';
 
     const OPTION_DATA = 'peepso_license_data';
+
+	const PEEPSO_LICENSE_TRANS = 'peepso_license_';
     private static $_licenses = NULL;
 
     /**
@@ -13,8 +15,11 @@ class PeepSoLicense
      * @param string $plugin_slug The PLUGIN_SLUG constant value for the plugin being checked
      * @return boolean TRUE if the license is active and valid; otherwise FALSE.
      */
-    public static function check_license($plugin_edd, $plugin_slug)
+    public static function check_license($plugin_edd, $plugin_slug, $is_admin = FALSE)
     {
+		if( FALSE == $is_admin ) {
+			$is_admin = is_admin();
+		}
 
         $license_data = self::_get_product_data($plugin_slug);
 
@@ -23,21 +28,65 @@ class PeepSoLicense
             $license_data['slug'] = $plugin_slug;
             $license_data['name'] = $plugin_edd;
             $license_data['license'] = '';
-            $license_data['state'] = 'invalid';
+			$license_data['state'] = 'invalid';
+			$license_data['response'] = 'invalid';
             $license_data['expire'] = 0;
             // write the license data
         }
 
-        if(is_admin()) {
-
+        if ($is_admin) {
             self::_set_product_data($plugin_slug, $license_data);
             self::activate_license($plugin_slug, $plugin_edd);
-        }
+        } else {
+			// Frontend will return "FALSE" only in some scenarios
+			if (!self::is_valid_key($plugin_edd)) {
+
+				/*
+				 * $license_data['response']
+				 *
+				 * invalid				FALSE - key BAD
+				 * inactive				FALSE - key OK, not active
+				 * item_name_mismatch 	FALSE - key OK, wrong plugin
+				 * site_inactive		TRUE  - key OK, wrong domain
+				 * expired				TRUE  - key OK, license expired
+				 */
+
+				if(!array_key_exists('response', $license_data)) {
+					$license_data['response'] = 'valid';
+				}
+
+				switch ($license_data['response']) {
+					case 'invalid':
+					case 'inactive':
+					case 'item_name_mismatch':
+						return FALSE;
+						break;
+					default:
+						return TRUE;
+						break;
+				}
+			}
+		}
 
         // check to see if the license key is valid for the named plugin
-
         return (self::is_valid_key($plugin_edd));
     }
+
+	public static function get_license($plugin_slug)
+	{
+		return self::_get_product_data($plugin_slug);
+	}
+
+	public static function delete_transient($plugin_slug)
+	{
+		$trans_key = self::trans_key($plugin_slug);
+		delete_transient($trans_key);
+	}
+
+	private static function trans_key($plugin_slug)
+	{
+		return self::PEEPSO_LICENSE_TRANS . $plugin_slug;
+	}
 
     /**
      * Activates the license key for a PeepSo add-on
@@ -47,63 +96,80 @@ class PeepSoLicense
      */
     public static function activate_license($plugin_slug, $plugin_edd)
     {
+        // how long to keep the transient keys?
+		$trans_lifetime = 24 * HOUR_IN_SECONDS;
+
         // get key stored from config pages
         $key = self::_get_key($plugin_slug);
 
         $license_data['license'] = $key;
         $license_data['name'] = $plugin_edd;
 
-        if (FALSE === $key || 0 === strlen($key))
-            return;
+        if (FALSE === $key || 0 === strlen($key)) {
+			return;
+		}
+
+        // when asking EDD API use "item_id" if plugin_edd is numeric, otherwise "item_name"
+        $key_type = 'item_name';
+
+        if(is_int($plugin_edd)) {
+            $key_type = 'item_id';
+        }
 
         $args = array(
             'edd_action' => 'check_license',
             'license' => $key,
-            'item_name' => urlencode($plugin_edd)
+            $key_type => $plugin_edd
         );
 
-        // use transient
-        $trans_key = 'peepso_license_' . md5($key . $plugin_slug);
+        // Use transient key to check for cached values
+		$trans_key = self::trans_key($plugin_slug);
+
+		// If there is no cached value, call home
         if (FALSE === ($validation_data = get_transient($trans_key))) {
+
             $resp = wp_remote_get(add_query_arg($args, self::PEEPSO_HOME),	// contact the home office
                 array('timeout' => 15, 'sslverify' => FALSE));				// options
 
-            // if there was an error validating, bug out
-            if (is_wp_error($resp))
-                return (FALSE);
+            if (is_wp_error($resp)) {
+				// If PeepSo.com is down build a fake license for 1 hour
 
-            /*			response={"license":"valid",
-            *				"item_name":"PeepSo Friends",
-            *				"expires":"2016-01-16 08:24:57",
-            *				"payment_id":"0000",				// invoice number
-            *				"customer_name":"Jon Doe",
-            *				"customer_email":"jondoe@mail.com",
-            *				"license_limit":"1",
-            *				"site_count":1,
-            *				"activations_left":0
-            *			}
-            */
-            $response = wp_remote_retrieve_body($resp);
-            $validation_data = json_decode($response);
-            set_transient($trans_key, $validation_data, 12 * HOUR_IN_SECONDS);
+				$trans_lifetime = 1 * HOUR_IN_SECONDS;
+
+				$validation_data = new stdClass();
+
+				$validation_data->success = true;
+
+				$validation_data->license 			= 'valid';
+  				$validation_data->item_name 		= $plugin_slug;
+  				$validation_data->expires			= '2099-01-01 00:00:00';
+  				$validation_data->payment_id		= 0;
+  				$validation_data->customer_name 	= 'temporary';
+  				$validation_data->customer_email	= 'temporary@peepso.com';
+  				$validation_data->license_limit 	= 0;
+  				$validation_data->site_count		= 0;
+  				$validation_data->activations_left 	= 'unlimited';
+			} else {
+				$response = wp_remote_retrieve_body($resp);
+				$validation_data = json_decode($response);
+			}
+            set_transient($trans_key, $validation_data, $trans_lifetime);
         }
-        // @todo it used to check "active"
-        // @todo expiration date?
+        
         if ('valid' === $validation_data->license) {
-
             // if parent site reports the license is active, update the stored data for this plugin
-            $license_data['state'] = 'valid';
-            $license_data['expire'] = $validation_data->expires;
-            self::_set_product_data($plugin_slug, $license_data);
+			$license_data['state'] = 'valid';
         } else {
-
-            // OLD: else if ('inactive' === $validation_data->license)
-
             // if parent site reports the license as inactive, update the stored data as well
-            $license_data['state'] = 'invalid';
-            $license_data['expire'] = 0;
-            self::_set_product_data($plugin_slug, $license_data);
+			$license_data['state'] = 'invalid';
         }
+
+		// remaining options
+		$license_data['response'] = $validation_data->license;
+		$license_data['expire'] = $validation_data->expires;
+
+		// save
+		self::_set_product_data($plugin_slug, $license_data);
     }
 
     /**
@@ -190,20 +256,33 @@ class PeepSoLicense
     {
         self::_load_licenses();
         $plugin_slug = sanitize_key($plugin);
-        if (!isset(self::$_licenses[$plugin_slug]))
-            return (FALSE);
+
+		if (!isset(self::$_licenses[$plugin_slug])) {
+			return (FALSE);
+		}
+
         $data = self::$_licenses[$plugin_slug];
 
         $str = $plugin_slug . '|' . esc_html($data['name']) .
             '~' . $data['license'] . ',' . $data['expire'] . $data['state'];
 
         $dt = new PeepSoDate($data['expire']);
-//echo ': md5: ', md5($str), PHP_EOL;
-//echo ': exp: ', $dt->Timestamp(), PHP_EOL;
-//echo ': ts : ', time(), PHP_EOL;
-//echo ': returning...', PHP_EOL;
+
         return (md5($str) === $data['checksum'] && 'valid' === $data['state'] && $dt->TimeStamp() > time());
     }
+
+	public static function get_key_state($plugin)
+	{
+		self::_load_licenses();
+		$plugin_slug = sanitize_key($plugin);
+		if (!isset(self::$_licenses[$plugin_slug])) {
+			return "unknown";
+		}
+
+		$data = self::$_licenses[$plugin_slug];
+
+		return array_key_exists('response', $data) ? $data['response'] : 'unknown';
+	}
 
     public static function dump_data()
     {
@@ -211,69 +290,5 @@ class PeepSoLicense
         var_export(self::$_licenses);
     }
 }
-
-/*
-function edd_sample_theme_check_license() {
-	$store_url = 'http://yoursite.com';
-	$item_name = 'Your Item Name';
-	$license = '834bbb2d27c02eb1ac11f4ce6ffa20bb';
-	$api_params = array(
-		'edd_action' => 'check_license',
-		'license' => $license,
-		'item_name' => urlencode( $item_name )
-	);
-	$response = wp_remote_get( add_query_arg( $api_params, $store_url ), array( 'timeout' => 15, 'sslverify' => false ) );
-  	if ( is_wp_error( $response ) )
-		return false;
-	$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-	if( $license_data->license == 'valid' ) {
-		echo 'valid';
-		exit;
-		// this license is still valid
-	} else {
-		echo 'invalid';
-		exit;
-		// this license is no longer valid
-	}
-}
-
-function edd_sample_activate_license() {
-
-	// listen for our activate button to be clicked
-	if( isset( $_POST['edd_license_activate'] ) ) {
-
-		// run a quick security check
-	 	if( ! check_admin_referer( 'edd_sample_nonce', 'edd_sample_nonce' ) )
-			return; // get out if we didn't click the Activate button
-
-		// retrieve the license from the database
-		$license = trim( get_option( 'edd_sample_license_key' ) );
-
-
-		// data to send in our API request
-		$api_params = array(
-			'edd_action'=> 'activate_license',
-			'license' 	=> $license,
-			'item_name' => urlencode( EDD_SL_ITEM_NAME ), // the name of our product in EDD,
-			'url'       => home_url()
-		);
-
-		// Call the custom API.
-		$response = wp_remote_get( add_query_arg( $api_params, EDD_SL_STORE_URL ) );
-
-		// make sure the response came back okay
-		if ( is_wp_error( $response ) )
-			return false;
-
-		// decode the license data
-		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-
-		// $license_data->license will be either "active" or "inactive"
-
-		update_option( 'edd_sample_license_status', $license_data->license );
-
-	}
-}
-*/
 
 // EOF

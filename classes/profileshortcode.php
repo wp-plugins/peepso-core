@@ -523,7 +523,7 @@ class PeepSoProfileShortcode
             'label_confirm_block_user' => 'Are you sure want to block this user?'
         ));
 
-        wp_register_script('peepso-resize', PeepSo::get_asset('js/jquery.autosize.js'),
+        wp_register_script('peepso-resize', PeepSo::get_asset('js/jquery.autosize.min.js'),
             array('jquery'), PeepSoActivityStream::PLUGIN_VERSION, TRUE);
 
         wp_enqueue_script('peepso-posttabs');

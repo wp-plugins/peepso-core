@@ -132,7 +132,7 @@ class PeepSoActivityShortcode
 	{
 //PeepSo::log(__METHOD__.'()');
 //PeepSo::log('  asset: ' . PeepSo::get_template_asset('activity', 'activity.css'));
-		wp_register_script('peepso-window', PeepSo::get_asset('js/pswindow.js'),
+		wp_register_script('peepso-window', PeepSo::get_asset('js/pswindow.min.js'),
 			array('jquery'), PeepSoActivityStream::PLUGIN_VERSION, TRUE);
 		wp_enqueue_script('peepso-window');
 
@@ -146,15 +146,15 @@ class PeepSoActivityShortcode
 			'label_cancel' => __('Cancel', 'peepso'),
 		));
 
-		wp_register_script('peepso-activitystream-js', PeepSo::get_asset('js/activitystream.js'),
+		wp_register_script('peepso-activitystream-js', PeepSo::get_asset('js/activitystream.min.js'),
 			array('peepso', 'peepso-window'), PeepSoActivityStream::PLUGIN_VERSION, TRUE);
 		wp_enqueue_script('peepso-activitystream-js');
 
-		wp_register_script('peepso-dropdown', PeepSo::get_asset('js/dropdown.js'),
+		wp_register_script('peepso-dropdown', PeepSo::get_asset('js/dropdown.min.js'),
 			array('peepso', 'peepso-activitystream-js'), PeepSo::PLUGIN_VERSION, TRUE);
 		wp_enqueue_script('peepso-dropdown');
 
-		wp_register_script('peepso-resize', PeepSo::get_asset('js/jquery.autosize.js'),
+		wp_register_script('peepso-resize', PeepSo::get_asset('js/jquery.autosize.min.js'),
 			array('jquery'), PeepSoActivityStream::PLUGIN_VERSION, TRUE);
 		wp_enqueue_script('peepso-resize');
 

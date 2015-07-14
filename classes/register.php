@@ -57,7 +57,7 @@ class PeepSoRegister
 				'value' => $input->post('firstname', ''),
 				'required' => 1,
 				'validation' => array(
-					'name', 
+					'name-utf8',
 					'minlen:' . PeepSoUser::FIRSTNAME_MINLEN,
 					'maxlen:' . PeepSoUser::FIRSTNAME_MAXLEN
 				),
@@ -69,7 +69,7 @@ class PeepSoRegister
 				'value' => $input->post('lastname', ''),
 				'required' => 1,
 				'validation' => array(
-					'name', 
+					'name-utf8',
 					'minlen:' . PeepSoUser::LASTNAME_MINLEN,
 					'maxlen:' . PeepSoUser::LASTNAME_MAXLEN
 				),

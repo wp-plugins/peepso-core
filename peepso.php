@@ -1,21 +1,26 @@
 <?php
-/*
-Plugin Name: PeepSo
-Plugin URI: http://www.peepso.com
-Description: The next generation Social Networking solution for your web site.
-Author: PeepSo
-Author URI: http://www.peepso.com
-Version: 1.0.0
-Copyright: (c) 2014-2015 iJoomla, Inc. All Rights Reserved.
-License: GNU General Public License, version 2 (http://www.gnu.org/license/gpl-20.0.html)
-Text Domain: peepso
-Domain path: /language
-
-The PHP code portions are distributed under the GPL license. If not otherwise stated, all
-images, manuals, cascading stylesheets and included JavaScript are NOT GPL, and are released
-under the iJoomla Proprietary Use License 2.0
-More information at: https://peepso.com/license-agreement
-*/
+/**
+ * Plugin Name: PeepSo
+ * Plugin URI: https://peepso.com
+ * Description: Social Networking Plugin for WordPress
+ * Author: PeepSo
+ * Author URI: https://peepso.com
+ * Version: 1.0.0-RC4
+ * Copyright: (c) 2015 PeepSo, Inc. All Rights Reserved.
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: peepso
+ * Domain Path: /language
+ *
+ * PeepSo is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * any later version.
+ *
+ * PeepSo is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY. See the
+ * GNU General Public License for more details.
+ */
 
 /*
  * Main plugin declaration
@@ -27,8 +32,13 @@ class PeepSo
     const DEBUG = FALSE;
     const MODULE_ID = 0;
     const PLUGIN_VERSION = '1.0.0';
+	const PLUGIN_RELEASE = 'RC4'; //ALPHA1, BETA1, RC1, STABLE
     const PLUGIN_NAME = 'PeepSo';
     const PLUGIN_SLUG = 'peepso_';
+	const PEEPSOCOM_LICENSES = 'http://tiny.cc/peepso-licenses';
+
+    const PEEPSO_INTEGRATION_JSON_URL = 'http://peepso.com/peepsotools-integration-json';
+    #const PEEPSO_INTEGRATION_JSON_URL = 'http://dev.peepsodev.com/peepsotools-integration-json';
 
     const ACCESS_FORCE_PUBLIC = -1;
     const ACCESS_PUBLIC = 10;
@@ -37,6 +47,7 @@ class PeepSo
     const CRON_MAILQUEUE = 'peepso_mailqueue_send_event';
     const CRON_DAILY_EVENT = 'peepso_daily_event';
     const CRON_WEEKLY_EVENT = 'peepso_weekly_event';
+
 
     private static $_instance = NULL;
     private static $_current_shortcode = NULL;
@@ -95,6 +106,16 @@ class PeepSo
         if (is_admin() && (!defined('DOING_AJAX') || !DOING_AJAX)) {
             add_action('admin_init', array(__CLASS__, 'can_install'));
             add_action('init', array(&$this, 'check_admin_access'));
+
+            /* @todo  #269 - welcome email must be opt-in, re-implement along with the first activation welcome screen
+
+            if(!self::get_option('peepso_welcome_email_sent') || isset($_GET['nocache_welcome_email'])) {
+                add_action('plugins_loaded',array(&$this,'send_welcome_email'));
+                $settings = PeepSoConfigSettings::get_instance();
+                $settings->set_option('peepso_welcome_email_sent', self::PLUGIN_VERSION.'-'.self::PLUGIN_RELEASE);
+            }
+             *
+            */
 
             PeepSoAdmin::get_instance();
         } else {
@@ -597,7 +618,7 @@ class PeepSo
         wp_enqueue_script('bootstrap', PeepSo::get_asset('aceadmin/js/bootstrap.min.js'),
             array('jquery'), self::PLUGIN_VERSION, TRUE);
 
-        wp_register_script('peepso', PeepSo::get_asset('js/peepso.js'),
+        wp_register_script('peepso', PeepSo::get_asset('js/peepso.min.js'),
             array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
 
         $aData = array(
@@ -626,29 +647,29 @@ class PeepSo
         wp_localize_script('peepso', 'peepsodata', $aData);
         wp_enqueue_script('peepso');
 
-        wp_register_script('peepso-observer', PeepSo::get_asset('js/observer.js'), array(), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-observer', PeepSo::get_asset('js/observer.min.js'), array(), PeepSo::PLUGIN_VERSION, TRUE);
         wp_enqueue_script('peepso-observer');
 
         // register these but don't enqueue them. The templates will do that if needed
-        wp_register_script('peepso-window', PeepSo::get_asset('js/pswindow.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
-        wp_register_script('peepso-postbox', PeepSo::get_asset('js/postbox.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
-        wp_register_script('peepso-share', PeepSo::get_asset('js/share.js'), array('jquery', 'peepso-window'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-window', PeepSo::get_asset('js/pswindow.min.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-postbox', PeepSo::get_asset('js/postbox.min.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-share', PeepSo::get_asset('js/share.min.js'), array('jquery', 'peepso-window'), PeepSo::PLUGIN_VERSION, TRUE);
 //		wp_register_script('peepso-login', PeepSo::get_asset('js/login.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
-        wp_register_script('peepso-iframetransport', PeepSo::get_asset('js/jquery.iframe-transport.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
-        wp_register_script('peepso-fileupload', PeepSo::get_asset('js/jquery.fileupload.js'), array('jquery-ui-widget', 'peepso-iframetransport'), PeepSo::PLUGIN_VERSION, TRUE);
-        wp_register_script('peepso-underscore', PeepSo::get_asset('js/underscore.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-iframetransport', PeepSo::get_asset('js/jquery.iframe-transport.min.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-fileupload', PeepSo::get_asset('js/jquery.fileupload.min.js'), array('jquery-ui-widget', 'peepso-iframetransport'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-underscore', PeepSo::get_asset('js/underscore.min.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
         wp_register_script('peepso-posttabs', PeepSo::get_asset('js/posttabs.js'), array('peepso', 'peepso-observer', 'peepso-underscore'), PeepSo::PLUGIN_VERSION, TRUE);
         wp_register_script('peepso-datepicker', PeepSo::get_asset('js/bootstrap-datepicker.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
-        wp_register_script('peepso-members', PeepSo::get_asset('js/member-search.js'), array('peepso-notification'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-members', PeepSo::get_asset('js/member-search.min.js'), array('peepso-notification'), PeepSo::PLUGIN_VERSION, TRUE);
         wp_register_script('image-scale', PeepSo::get_asset('js/image-scale.min.js'), array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
-        wp_register_script('peepso-lightbox', PeepSo::get_asset('js/lightbox.js'), array('jquery', 'peepso'), PeepSo::PLUGIN_VERSION, TRUE);
-        wp_register_script('peepso-modal-comments', PeepSo::get_asset('js/modal-comments.js'), array('peepso-observer', 'peepso-activitystream-js', 'image-scale', 'peepso-lightbox', 'peepso-underscore', 'peepso'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-lightbox', PeepSo::get_asset('js/lightbox.min.js'), array('jquery', 'peepso'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_register_script('peepso-modal-comments', PeepSo::get_asset('js/modal-comments.min.js'), array('peepso-observer', 'peepso-activitystream-js', 'image-scale', 'peepso-lightbox', 'peepso-underscore', 'peepso'), PeepSo::PLUGIN_VERSION, TRUE);
         wp_register_script('peepso-chosen', plugin_dir_url(__FILE__) . 'assets/js/chosen.jquery.min.js', array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
         wp_register_script('peepso-load-image', plugin_dir_url(__FILE__) . 'assets/js/load-image.all.min.js', array('jquery'), PeepSo::PLUGIN_VERSION, TRUE);
 
         wp_register_style('peepso-chosen', plugin_dir_url(__FILE__) . 'assets/css/chosen.min.css', array('peepso'), PeepSo::PLUGIN_VERSION);
         // Enqueue peepso-window, a lot of functionality uses the popup dialogs
-        wp_enqueue_script('peepso-notification', PeepSo::get_asset('js/notifications.js'), array('peepso-observer', 'peepso-underscore', 'jquery-ui-position'), PeepSo::PLUGIN_VERSION, TRUE);
+        wp_enqueue_script('peepso-notification', PeepSo::get_asset('js/notifications.min.js'), array('peepso-observer', 'peepso-underscore', 'jquery-ui-position'), PeepSo::PLUGIN_VERSION, TRUE);
         wp_enqueue_script('peepso-window');
         wp_enqueue_script('peepso-members');
         wp_enqueue_script('peepso-modal-comments');
@@ -1604,23 +1625,66 @@ class PeepSo
 
             $style="display:none";
         }
+
+		$license_data = PeepSoLicense::get_license($plugin_slug);
+echo "<!--";print_r($license_data);echo "-->";
+		switch ($license_data['response']) {
+			case 'site_inactive':
+				$message = __('This domain is not registered, you can still use PeepSo with PLUGIN_NAME, but you will need to register your domain to get technical support. You can do it <a target="_blank" href="PEEPSOCOM_LICENSES">here</a>.', 'peepso');
+				break;
+			case 'expired':
+				$message = __('License for PLUGIN_NAME has expired. Please renew your license on peepso.com and enter a valid license. You can do it <a target="_blank" href="PEEPSOCOM_LICENSES">here</a>.', 'peepso');
+				break;
+			case 'invalid':
+			case 'inactive':
+			case 'item_name_mismatch':
+			default:
+				$message = __('License for PLUGIN_NAME is missing or invalid. Please <a href="ENTER_LICENSE">enter a valid license</a> to activate it. You can get your license key <a target="_blank" href="PEEPSOCOM_LICENSES">here</a>.', 'peepso');
+				break;
+		}
+
+		#var_dump($license_data);
+		$from = array(
+			'PLUGIN_NAME',
+			'ENTER_LICENSE',
+			'PEEPSOCOM_LICENSES',
+		);
+
+		$to = array(
+			$plugin_name,
+			'admin.php?page=peepso_config#licensing',
+			self::PEEPSOCOM_LICENSES,
+		);
+
+		$message = str_ireplace( $from, $to, $message );
+		#var_dump($message);
+
         echo '<div class="error peepso" id="error_'.$plugin_slug.'" style="'.$style.'">';
-        echo '<strong>', __($plugin_name . ' plugin requires a valid license. <a href="admin.php?page=peepso_config#licensing">Click here</a> to manage licenses.', 'peepso'), '</strong>';
+        echo '<strong>', $message , '</strong>';
         echo '</div>';
     }
 
-    public static function check_version_compat($version)
+    public static function check_version_compat($version, $release = NULL)
     {
         // initial success array
         $response = array(
             'ver_core' => self::PLUGIN_VERSION,
-            'ver_self' => $version,
+			'rel_core' => self::PLUGIN_RELEASE,
+			'ver_self' => $version,
+			'rel_self' => $release,
             'compat'    =>  1, // 1 - OK, 0 - ERROR, -1 - WARNING
             'part'          => '',
         );
 
-        // if the strings are the same, no need to analyze
+        // if the strings are the same
         if( $version == self::PLUGIN_VERSION ) {
+
+			if(NULL !== $release) {
+				if( $release != self::PLUGIN_RELEASE ) {
+					$response['compat'] = -1;
+				}
+			}
+
             return $response;
         }
 
@@ -1679,17 +1743,36 @@ class PeepSo
 
     public static function version_notice($plugin_name, $plugin_slug, $version_check)
     {
-        $message = "$plugin_name <u>{$version_check['ver_self']}</u>";
+		$version_check['ver_core'] .= "-".$version_check['rel_core'];
+
+		if( strlen( $version_check['ver_self'] ) ) {
+			$version_check['ver_self'] .= "-" . $version_check['rel_self'];
+		}
+
+		$message = "$plugin_name <i>{$version_check['ver_self']}</i>";
+
 
         if( -1 == $version_check['compat'] ) {
+		/*
+			PLUGIN_NAME X.X.X might not fully compatible with PeepSo X.X.Y.
+			Please upgrade PLUGIN_NAME  and PeepSo core to avoid conflicts and issues. [Upgrade Now
+		*/
+
             $message .= __(' might not be fully compatible with PeepSo ', 'peepspo');
-            $message .= " <u>{$version_check['ver_core']}</u>. ";
+            $message .= " <i>{$version_check['ver_core']}</i>. ";
         } else {
             $message .= __(' is not compatible with PeepSo ', 'peepspo');
-            $message .= " <u>{$version_check['ver_core']}</u> and has been disabled. ";
+            $message .= " <i>{$version_check['ver_core']}</i> and has been disabled. ";
         }
 
-        $message .= __('Please make sure all PeepSo plugins are using the same version.', 'peepso');
+        $message .= __('Please upgrade', 'peepso');
+		$message .= " $plugin_name ";
+		$message .= __('and PeepSo core to avoid conflicts and issues.', 'peepso');
+		// @todo 245 add URL
+
+		$message .= ' <a href="'.self::PEEPSOCOM_LICENSES.'" target="_blank">';
+		$message .= __('Upgrade now!', 'peepso');
+		$message .= '</a>';
 
         echo '<div class="error peepso"><strong>'.$message.'</strong></div>';
     }
@@ -1718,6 +1801,78 @@ class PeepSo
 
         return ($types);
     }
+
+    /* @todo #269 - welcome email must be opt-in, re-implement along with the first activation welcome screen
+    public static function send_welcome_email() {
+
+        // get HTML
+        $url_html = PeepSo::PEEPSO_INTEGRATION_JSON_URL . '/peepso_welcome_email.html';
+
+        $resp_html  = wp_remote_get(add_query_arg(array(), $url_html), array('timeout' => 15, 'sslverify' => FALSE));
+
+        if (!is_wp_error($resp_html)) {
+            $replace_from = array(
+                'site_url',
+                'site_name',
+            );
+
+            $replace_to = array(
+                get_bloginfo('url'),
+                get_bloginfo('name')
+            );
+
+            $message = str_ireplace($replace_from, $replace_to, wp_remote_retrieve_body($resp_html));
+        }
+
+        if(!strlen($message)){
+            return false;
+        }
+
+        // get JSON settings
+        $url = PeepSo::PEEPSO_INTEGRATION_JSON_URL . '/peepso_welcome_email.json';
+
+        $resp = wp_remote_get(add_query_arg(array(), $url), array('timeout' => 15, 'sslverify' => FALSE));
+
+        if (!is_wp_error($resp)) {
+            $response = wp_remote_retrieve_body($resp);
+        }
+
+        if(!strlen($response) || !($email_config = json_decode($response, true))) {
+            return false;
+        }
+
+        $email_config = array_pop($email_config);
+
+        $to = get_bloginfo('admin_email');
+
+        $subject = $email_config['subject'];
+
+        $headers = "From: {$email_config['header_from']} <{$email_config['header_from_email']}>\r\n";
+        $headers.= "Reply-To: {$email_config['header_reply_to']} <{$email_config['header_reply_to_email']}>\r\n";
+        $headers.= "X-Mailer: PHP/" . phpversion() . "\r\n";
+        $headers.= "MIME-Version: 1.0\r\n";
+        $headers.= "Content-type: text/html; charset=utf-8\r\n";
+
+
+        if(isset($_GET['nocache_welcome_email'])) {
+
+            echo "\n\n<!--\n\n$subject\n\nHTML: ".strlen($message)." chars\n\n";
+
+            print_r($headers);
+
+            echo "\n\n";
+
+            print_r($to);
+
+            echo "\n\n-->";
+        }
+
+
+        if (function_exists('wp_mail')){
+            wp_mail($to, $subject, $message, $headers);
+        }
+    }
+    */
 }
 
 defined('WPINC') || die;

@@ -42,7 +42,7 @@ class PeepSoAdminConfigLicense implements PeepSoAjaxCallback
 
                 PeepSoLicense::activate_license($slug, $name);
 
-                $response[$slug] = (int)PeepSoLicense::check_license($name, $slug);
+                $response[$slug] = (int)PeepSoLicense::check_license($name, $slug, TRUE);
             }
         }
 

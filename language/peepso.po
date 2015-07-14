@@ -1085,7 +1085,7 @@ msgid "Front Page Title"
 msgstr ""
 
 #: classes/configsections.php:143
-msgid "Activitiy Stream"
+msgid "Activity Stream"
 msgstr ""
 
 #: classes/configsections.php:144 classes/configsections.php:165

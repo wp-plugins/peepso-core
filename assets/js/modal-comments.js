@@ -1,12 +1,3 @@
-/*
- * @copyright Copyright (C) 2014 iJoomla, Inc. - All Rights Reserved.
- * @license GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
- * @author PeepSo.com <webmaster@peepso.com>
- * @url https://www.peepso.com/license-agreement
- * The PHP code portions are distributed under the GPL license. If not otherwise stated, all images, manuals, cascading style sheets, and included JavaScript *are NOT GPL, and are released under the iJoomla Proprietary Use License v1.0
- * More info at https://www.peepso.com/license-agreement/
- */
-
 function PsModalComments()
 {
 	this.current_object = null;
@@ -42,6 +33,7 @@ PsModalComments.prototype.open = function(object_id, type, options) {
 				options = jQuery.extend({
 					index: response.data.index,
 					afterchange: function( lightbox ) {
+						jQuery(document).trigger("peepso_tags_init_comments");
 						activity.setup_comment_textarea();
 						ps_observer.apply_filters("modalcomments.afterchange", lightbox);
 					}

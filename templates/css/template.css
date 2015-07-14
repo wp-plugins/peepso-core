@@ -1,9 +1,9 @@
 /*
  *  PeepSo
  *  Default Template of PeepSo
- *  @author iJoomla, Inc
+ *  @author PeepSo, Inc
  *  @version 1.0.0
- *  Copyright 2015 iJoomla, Inc. GPL 2.0 licensed.
+ *  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
  */
 /*  Reset styles  */
 html {
@@ -1129,8 +1129,15 @@ input[type="password"].ps-input:focus {
   line-height: 16px;
 }
 
+.ps-comment-message {
+  margin-top: 4.25px;
+  margin-bottom: 8.5px;
+}
 .ps-comment-message p {
   display: inline;
+}
+.ps-comment-message:last-child {
+  margin-bottom: 0;
 }
 
 .ps-comment-content p {
@@ -1251,6 +1258,16 @@ input[type="password"].ps-input:focus {
   border: 1px solid transparent;
   padding: 8.5px 25px 8.5px 8.5px;
   line-height: 16px;
+}
+
+.ps-comment-media {
+  margin-bottom: 14px;
+}
+.ps-comment-media:last-child {
+  margin-bottom: 0;
+}
+.ps-comment-media:empty {
+  margin-bottom: 0;
 }
 
 .ps-comment-actions {

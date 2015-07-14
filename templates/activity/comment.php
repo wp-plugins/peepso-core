@@ -13,9 +13,8 @@
 
 		<div data-type="stream-more" class="cstream-more" data-commentmore="true"></div>
 
-		<div class="ps-comment-media cstream-attachments">
-			<?php peepso('activity', 'comment-attachment'); ?>
-		</div>
+		<div class="ps-comment-media cstream-attachments"><?php peepso('activity', 'comment-attachment'); ?></div>
+		
 		<div class="ps-comment-time ps-shar-meta-date">
 			<small class="activity-post-age" data-timestamp="<?php peepso('activity', 'post-timestamp'); ?>"><?php peepso('activity', 'post-age'); ?></small>
 			<div id="act-like-<?php echo $act_id; ?>" class="ps-comment-links cstream-likes ps-js-act-like--<?php echo $act_id; ?>" style="display:none">
