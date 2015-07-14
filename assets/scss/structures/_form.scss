@@ -1,0 +1,268 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Form.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Form  */
+.ps-form {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+%ps-input {
+	display: inline-block;
+	padding: $padding-small;
+	margin-top: 0;
+	margin-bottom: 0;
+	border: 1px solid $color-light;
+	border-radius: $border-radius;
+	color: $color-neutral;
+	font-size: $font-size-base;
+	line-height: $font-size-base;
+	transition: all .25s ease-in-out;
+	box-shadow: none;
+	&:focus {
+		border-color: $color-primary;
+	}
+}
+
+.ps-input,
+.ps-select,
+input[type="text"].ps-input,
+input[type="password"].ps-input {
+	@extend %ps-input;
+}
+
+.ps-select {
+	padding: 5.5px;
+}
+
+.ps-select-small {
+	padding: 3px;
+	font-size: $font-size-small;
+	line-height: $font-size-small;
+}
+
+.ps-checkbox {
+	position: relative;
+	line-height: 2.2rem;
+
+	input[type="checkbox"] {
+		position: absolute;
+		margin-top: 5px;
+	}
+
+	span,
+	label {
+		margin-top: 5px;
+		margin-left: $padding-large;
+		color: $color-neutral;
+		font-size: $font-size-small;
+	}
+}
+
+.ps-form-legend {
+	margin-bottom: $padding-base;
+	color: $color-gray;
+	font-size: $font-size-base;
+	font-weight: bold;
+}
+
+.ps-form-group {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin-top: $padding-base;
+	color: $color-gray;
+
+	&.has-privacy {
+		padding-right: 60px;
+	}
+
+	> label {
+		font-size: $font-size-small;
+		&:first-child {
+			vertical-align: middle;
+			display: table-cell;
+			width: 140px;
+			padding-right: $padding-base;
+		}
+	}
+
+	.ps-input,
+	.ps-select,
+	.ps-textarea {
+		width: 100%;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	@include media('medium') {
+		display: table;
+		padding-right: 60px;
+	}
+}
+
+.ps-form-row {
+}
+
+.ps-form-controls {
+	margin-bottom: $padding-small;
+}
+
+.ps-form-label {
+}
+
+.ps-form-field {
+}
+
+.ps-form-helper {
+	color: $color-gray;
+	font-size: $font-size-small;
+	line-height: $font-size-base;
+}
+
+.ps-form-error{
+	@extend %ps-list;
+	display: block;
+	> li {
+		color: $color-danger;
+		font-size: $font-size-smallest;
+	}
+}
+
+.ps-form-input {
+	@include media('large') {
+		display: inline-block;
+	}
+}
+
+.ps-form-input-icon {
+	position: relative;
+
+	.ps-icon {
+		position: absolute;
+		top: 9px;
+		left: 9px;
+		line-height: $font-size-base;
+	}
+
+	.ps-input {
+		padding-top: $padding-small !important;
+		padding-left: $padding-base*2 !important;
+		padding-bottom: $padding-small !important;
+	}
+}
+
+.required-sign {
+	color: $color-danger;
+}
+
+.submitel {
+	@include media('medium') {
+		padding-left: 140px;
+	}
+}
+
+.ps-form-privacy {
+	display: block;
+	button {
+		width: 100%;
+		margin-top: 4px;
+	}
+	.dropdown-menu {
+		width: 100%;
+	}
+
+	@include media('medium') {
+		position: absolute;
+		top: 0;
+		right: 0;
+		button {
+			margin-top: 0;
+		}
+	}
+}
+
+.ps-privacy-dropdown {
+	position: relative;
+	.dropdown-menu {
+		left: auto;
+		right: 0;
+	}
+}
+
+.ps-privacy-title {
+	@include media('medium') {
+		display: none;
+	}
+}
+
+
+/*  Textarea  */
+.ps-textarea {
+	display: inline-block;
+	width: 100%;
+	padding: $padding-small;
+	margin-top: 0;
+	margin-bottom: 0;
+	border: 1px solid $color-light;
+	border-radius: $border-radius;
+	background: none;
+	color: $color-neutral;
+	font-size: $font-size-small;
+	line-height: $font-size-base;
+	transition: all .25s ease-in-out;
+	box-shadow: none;
+	&:focus {
+		border-color: $color-primary;
+		background: none;
+	}
+}
+
+.ps-textarea-wrapper {
+	position: relative;
+
+	.ps-icon-add {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+}
+
+
+/*  Form search  */
+.ps-form-search {
+	@extend %clearfix;
+	margin-bottom: $padding-base;
+
+	input[type="text"] {
+		width: 68%;
+		display: block;
+		float: left;
+		margin-top: 0 !important;
+		margin-right: 2%;
+		margin-bottom: 0 !important;
+	}
+	
+	.ps-btn {
+		float: left;
+		display: block;
+		width: 30%;
+	}
+
+	@include media('medium') {
+		input[type="text"] {
+			width: 88%;
+		}
+		.ps-btn {
+			width: 10%;
+		}
+	}
+}

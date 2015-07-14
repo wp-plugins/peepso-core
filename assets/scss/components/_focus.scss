@@ -1,0 +1,297 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Focus.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Focus  */
+.ps-focus {
+	position: relative;
+	margin-bottom: $padding-base;
+	background-color: white;
+}
+
+.ps-focus-cover {
+	position: relative;
+	&:before {
+		display: block;
+		content: '';
+		height: 0;
+		padding-top: 66.5%;
+	}
+
+	@include media('medium') {
+		&:before {
+			display: block;
+			content: '';
+			height: 0;
+			padding-top: 37.5%;
+		}
+	}
+}
+
+.ps-focus-cover-edit {
+	.ps-avatar-focus {
+		z-index: 2;
+		display: block;
+	}
+
+	.ps-focus-title {
+		position: absolute;
+		z-index: 2;
+		top: 52px;
+		left: 114px;
+		text-shadow: 0 0 3px rgba(0,0,0,1);
+	}
+
+	.ps-focus-image {
+		z-index: 1;
+	}
+}
+
+.ps-focus-mini {
+	.ps-focus-cover {
+		&:before {
+			padding-top: 92px;
+
+			@include media('medium') {
+				padding-top: 128px;
+			}
+		}
+	}
+}
+
+.ps-focus-options {
+	position: absolute;
+	top: $padding-base;
+	right: $padding-base;
+	z-index: map-get($zindex, dropdown);
+
+	> a {
+		display: block;
+		padding: 7.5px 5px;
+		border-radius: 100%;
+		background-color: rgba(0,0,0,.2);
+		color: white !important;
+		font-size: 1.6rem;
+		line-height: 1.6rem;
+		&:hover, &:focus {
+			background-color: rgba(0,0,0,.3);
+			color: white !important;
+		}
+	}
+
+	.ps-icon {
+		fill: white;
+	}
+}
+
+.ps-focus-change {
+	position: absolute;
+	z-index: map-get($zindex, base);
+	bottom: $padding-base;
+	right: $padding-base;
+}
+
+.ps-focus-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	@include media('medium') {
+		display: block;
+	}
+}
+
+.ps-focus-image-mobile {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover !important;
+
+	@include media('medium') {
+		display: none;
+	}
+}
+
+
+/*  Focus header  */
+.ps-focus-header {
+	position: absolute;
+	bottom: 0;
+	display: table;
+	width: 100%;
+	padding: $padding-base;
+	background-color: rgba(0,0,0,.3);
+}
+
+.ps-avatar-focus,
+.ps-focus-title,
+.ps-focus-actions {
+	display: table-cell;
+}
+
+.ps-focus-title {
+	position: relative;
+	padding-left: $padding-base;
+	vertical-align: middle;
+	span {
+		margin-top: $padding-small/1.5;
+		margin-bottom: $padding-small;
+		color: white;
+		font-size: 2rem;
+		line-height: 2rem;
+
+		@include media('medium') {
+			font-size: 2.4rem;
+			line-height: 2.4rem;
+		}
+	}
+}
+
+.ps-focus-actions {
+	position: absolute;
+	bottom: $padding-base;
+	right: $padding-base;
+	display: none;
+
+	@include media('large') {
+		display: block;
+	}
+}
+
+.ps-focus-actions-mobile {
+	display: table;
+	width: 100%;
+	border-bottom: 1px solid rgba(0,0,0,.08);
+	border-spacing: $padding-base;
+	text-align: center;
+
+	a {
+		display: table-cell;
+	}
+
+	@include media('large') {
+		display: none;
+	}
+}
+
+
+/*  Focus link  */
+.ps-focus-link {
+	@extend %clearfix;
+
+	> ul:first-child {
+		> li {
+			float: left;
+			width: 50%;
+			padding: 0;
+			margin: 0;
+			border-bottom: 1px solid rgba(0,0,0,.08);
+			text-align: center;
+			&:first-child,
+			&:nth-child(2n+1) {
+				border-right: 1px solid rgba(0,0,0,.08);
+			}
+		}
+	}
+
+	> ul:last-child {
+		display: table;
+		width: 100%;
+		text-align: center;
+		> li {
+			padding: 0;
+			margin: 0;
+			display: table-cell;
+		}
+	}
+
+	a,
+	li > span {
+		display: block;
+		padding: $padding-small $padding-base;
+		font-size: $font-size-small;
+		line-height: 1.8rem;
+		font-weight: bold;
+		text-decoration: none;
+		&:hover, &:focus {
+			text-decoration: none;
+
+			span,
+			.ps-icon {
+				color: $color-gray-dark;
+				fill: $color-gray-dark;
+			}
+		}
+	}
+
+	.current {
+		background-color: rgba(0,0,0,.01);
+		a {
+			color: $color-link-hover !important;
+			&:hover, &:focus {
+				color: $color-link-hover !important;
+			}
+		}
+	}
+
+	span {
+		color: $color-gray;
+		font-weight: normal;
+	}
+
+	@include media('medium') {
+		> ul {
+			> li {
+				float: left;
+			}
+		}
+
+		> ul:first-child {
+			float: left;
+			> li {
+				width: auto;
+				padding-top: 1px;
+				border-right: 1px solid rgba(0,0,0,.08);
+				border-bottom: none;
+			}
+		}
+
+		> ul:last-child {
+			float: right;
+			display: block;
+			width: auto;
+		}
+	}
+}
+
+
+/*  Focus about  */
+.ps-focus-about {
+	@extend %clearfix;
+}
+
+
+/*  Focus - Reposition cover button  */
+.ps-reposition-cover {
+	display: none;
+	@include media('medium') {
+		display: block;
+	}
+}

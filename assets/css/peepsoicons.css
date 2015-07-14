@@ -1,0 +1,88 @@
+#peepso [class^="com-icon-"],
+#peepso [class*=" com-icon-"],
+#peepso [class^="com-toolbar-"],
+#peepso [class*=" com-toolbar-"],
+#peepso [class^="com-glyph-"],
+#peepso [class*=" com-glyph-"],
+#peepso [class^="com-app-"],
+#peepso [class*=" com-app-"] {
+	display:inline-block;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	vertical-align:top;
+	background-image:url("../images/sprites-icons.png");
+	background-position:0 0;
+	background-repeat:no-repeat
+}
+#peepso [class^="com-icon-"]+a,
+#peepso [class*=" com-icon-"]+a,
+#peepso [class^="com-icon-"]+span,
+#peepso [class*=" com-icon-"]+span {
+	display:inline-block;
+	line-height:20px;
+	min-height:20px
+}
+#peepso .com-icon-user,
+#peepso .com-icon-profile{background-position:0 -20px}
+#peepso .com-icon-user-plus{background-position:0 -40px}
+#peepso .com-icon-groups{background-position:0 -60px}
+#peepso .com-icon-groups-plus{background-position:0 -80px}
+#peepso .com-icon-groups-edit{background-position:0 -100px}
+#peepso .com-icon-groups-lock{background-position:0 -120px}
+#peepso .com-icon-groups-delete{background-position:0 -140px}
+#peepso .com-icon-photos,
+#peepso .com-icon-cover{background-position:0 -160px}
+#peepso .com-icon-photos-plus{background-position:0 -180px}
+#peepso .com-icon-events{background-position:0 -200px}
+#peepso .com-icon-events-plus{background-position:0 -220px}
+#peepso .com-icon-events-import{background-position:0 -240px}
+#peepso .com-icon-events-edit{background-position:0 -260px}
+#peepso .com-icon-events-delete{background-position:0 -280px}
+#peepso .com-icon-videos{background-position:0 -300px}
+#peepso .com-icon-videos-plus{background-position:0 -320px}
+#peepso .com-icon-comment{background-position:0 -340px}
+#peepso .com-icon-comment-plus{background-position:0 -360px}
+#peepso .com-icon-album{background-position:0 -380px}
+#peepso .com-icon-album-plus{background-position:0 -400px}
+#peepso .com-icon-bell{background-position:0 -420px}
+#peepso .com-icon-bell-plus{background-position:0 -440px}
+#peepso .com-icon-award-gold{background-position:0 -460px}
+#peepso .com-icon-award-silver{background-position:0 -480px}
+#peepso .com-icon-award-plus{background-position:0 -500px}
+#peepso .com-icon-award-minus{background-position:0 -520px}
+#peepso .com-icon-blog{background-position:0 -540px}
+#peepso .com-icon-wall{background-position:0 -560px}
+#peepso .com-icon-thumbup{background-position:0 -580px}
+#peepso .com-icon-thumbdown{background-position:0 -600px}
+#peepso .com-icon-thumbup-shade{background-position:0 -620px}
+#peepso .com-icon-thumbdown-shade{background-position:0 -640px}
+#peepso .com-icon-folder{background-position:0 -660px}
+#peepso .com-icon-system,
+#peepso .com-icon-chart{background-position:0 -680px}
+#peepso .com-icon-mail-go{background-position:0 -700px}
+#peepso a:hover .com-icon-printer-shade,
+#peepso .com-icon-printer{background-position:0 -720px}
+#peepso a:hover .com-icon-bookmark-shade,
+#peepso .com-icon-bookmark{background-position:0 -740px}
+#peepso a:hover .com-icon-report-shade,
+#peepso .com-icon-report{background-position:0 -760px}
+#peepso a:hover .com-icon-block-shade,
+#peepso .com-icon-block{background-position:0 -780px}
+#peepso .com-icon-bookmark-shade{background-position:0 -800px}
+#peepso .com-icon-report-shade{background-position:0 -820px}
+#peepso .com-icon-block-shade{background-position:0 -840px}
+#peepso .com-icon-add{background-position:0 -860px}
+#peepso .com-icon-tick{background-position:0 -880px}
+#peepso .com-icon-rotate-clock{background-position:0 -900px}
+#peepso .com-icon-rotate-anticlock{background-position:0 -920px}
+#peepso .com-icon-door-out{background-position:0 -940px}
+#peepso .com-icon-door-in{background-position:0 -960px}
+#peepso .com-icon-drawer{background-position:0 -980px}
+#peepso .com-icon-form{background-position:0 -1000px}
+#peepso .com-icon-clock{background-position:0 -1020px}
+#peepso .com-icon-avatar{background-position:0 -1040px}
+#peepso .com-icon-profile-link{background-position:0 -1060px}
+#peepso .com-icon-info{background-position:0 -1080px}
+#peepso .com-icon-cog{background-position:0 -1100px}
+#peepso .com-icon-lock-open{background-position:0 -1120px}

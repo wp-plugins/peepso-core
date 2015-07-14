@@ -1,0 +1,48 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Submenu.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Submenu  */
+.ps-submenu {
+	@extend %ps-list;
+	@extend %clearfix;
+	background-color: $submenu-bg;
+	> li {
+		float: left;
+		padding: 0;
+		margin: 0;
+		border-right: 1px solid rgba(0,0,0,.08);
+		> a {
+			display: block;
+			padding: 6px $padding-base;
+			background-color: $submenu-bg;
+			color: $submenu-color !important;
+			font-size: 1.1rem;
+			line-height: 1.6rem;
+			&:hover, &:focus {
+				background-color: $submenu-bg-hover;
+				color: $submenu-color-hover !important;
+			}
+			&.active {
+				background-color: $submenu-bg-active;
+				color: $submenu-color-active !important;
+				span {
+					color: $color-gray !important;
+				}
+			}
+		}
+
+		&:last-child {
+			border: none;
+		}
+	}
+}
+
+.ps-submenu-page {
+	border-top: 1px solid rgba(0,0,0,.05);
+}

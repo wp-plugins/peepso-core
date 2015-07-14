@@ -1,0 +1,36 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Media-Queries.scss
+//
+//////////////////////////////////////////////////
+
+
+@mixin media($media) {
+
+    @if $media == xsmall {
+        @media only screen and (max-width:$xsmall) {
+            @content;
+        }
+    }
+
+    @else if $media == small {
+        @media only screen and (max-width:$small) {
+            @content;
+        }
+    }
+
+    @else if $media == medium {
+        @media only screen and (min-width:$medium) {
+            @content;
+        }
+    }
+
+    @else if $media == large {
+        @media only screen and (min-width:$large) {
+            @content;
+        }
+    }
+
+}

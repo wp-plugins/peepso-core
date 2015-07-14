@@ -1,0 +1,76 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Reset.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Reset styles  */
+html {
+	box-sizing: border-box;
+	font-size: 62.5% !important;
+}
+
+body {
+	font-size: $font-size;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+a {
+	color: $color-link;
+	text-decoration: none;
+	cursor: pointer;
+	&:hover, &:focus, &.active {
+		color: $color-link-hover;
+		text-decoration: none;
+	}
+
+	&.liked,
+	&.liked span {
+		color: $color-link;
+		&:hover {
+			color: $color-link-hover;
+		}
+	}
+}
+
+button {
+	border: none;
+	&.liked,
+	&.liked span {
+		color: $color-link;
+		&:hover {
+			color: $color-link-hover;
+		}
+	}
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	> li {
+		list-style-type: none !important;
+	}
+}
+
+button,
+input,
+select,
+textarea {
+	vertical-align: top;
+}
+
+img {
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+small {
+	font-size: $font-size-smallest;
+}

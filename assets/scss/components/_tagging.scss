@@ -1,0 +1,94 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Tagging.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Tagging  */
+.ps-tagging-wrapper {
+	position: relative;
+}
+
+.ps-tagging-textarea,
+.ps-tagging-beautifier {
+	font-size: 1.3rem;
+	line-height: 1.8rem;
+	font-family: inherit;
+	font-weight: normal;
+}
+
+.ps-tagging-textarea {
+	position: relative;
+	background: none;
+}
+
+.ps-tagging-beautifier {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: auto;
+	min-height: 0;
+	color: transparent;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.ps-tagging-hidden {
+	display: none;
+}
+
+.ps-tagging-dropdown {
+	position: absolute;
+	z-index: map-get($zindex, dropdown);
+	left: 0;
+	right: 0;
+	display: none;
+	margin-top: -3px;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	background: white;
+	font-size: 1.2rem;
+
+	> div {
+		border-bottom: 1px solid rgba(0,0,0,.08);
+		&:last-child {
+			border-bottom: none;
+		}
+		&.active a {
+			background-color: rgba(0,0,0,.05);
+			color: black !important;
+		}
+	}
+
+	a {
+		display: block;
+		padding: 4px $padding-small;
+		white-space: nowrap;
+		outline: none;
+		&:hover, &:focus {
+			background-color: rgba(0,0,0,.05);
+			color: black !important;
+		}
+	}
+
+	.ps-avatar {
+		display: inline-block;
+		width: 32px;
+		margin-right: $padding-small;
+		img {
+			padding: 2px;
+		}
+	}
+}
+
+.ps-tag {
+	display: inline-block;
+	border-radius: $border-radius-small;
+	background: #b3e5fc;
+	box-shadow: 0 0 0 1px #b3e5fc;
+	font-weight: inherit !important;
+}

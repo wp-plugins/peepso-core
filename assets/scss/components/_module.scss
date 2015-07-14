@@ -1,0 +1,93 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Module.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Module  */
+.ps-module {
+	background-color: $module-bg;
+}
+
+.ps-module-wrapper {
+	margin-bottom: $padding-base;
+
+	.ps-tab-bar {
+		margin-bottom: 0;
+	}
+
+	&:empty {
+		display: none;
+	}
+}
+
+.ps-module-footer {
+	clear: both;
+	margin-top: $padding-base;
+	font-size: $font-size-small;
+}
+
+
+/*  Module profile  */
+.ps-module-profile {
+	.ps-list-item {
+		display: block;
+		padding: 4px 0;
+		margin: 0;
+		border-top: 1px solid rgba(0,0,0,.08);
+		border-bottom: none;
+		font-size: $font-size-small;
+		line-height: 1.8rem;
+		&:first-child {
+			border-top: none;
+		}
+		&:last-child {
+			padding: 0;
+			margin-top: $padding-base;
+			border: none;
+		}
+	}
+}
+
+.ps-module-profile-header {
+	display: table;
+	width: 100%;
+	margin-bottom: $padding-small;
+	.ps-avatar {
+		display: table-cell;
+		width: 64px;
+		vertical-align: middle;
+	}
+}
+
+.ps-module-profile-info {
+	display: table-cell;
+	padding-left: $padding-base;
+	vertical-align: middle;
+
+	.ps-user-name {
+		display: block;
+		margin-bottom: 4px;
+		font-size: 1.6rem;
+		font-weight: bold;
+		line-height: 1.8rem;
+	}
+}
+
+
+/*  Module filters  */
+.ps-module-filters {
+	margin-bottom: $padding-base;
+	> a {
+		display: inline-block;
+		margin-right: $padding-small;
+		font-size: $font-size-smallest/1.1;
+		&.active {
+			color: black;
+			font-weight: bold;
+		}
+	}
+}

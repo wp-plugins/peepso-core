@@ -1,0 +1,136 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Variables.scss
+//
+//////////////////////////////////////////////////
+
+
+// Config
+$scss-avatar-shape:      circle !default; // [ square | circle ]
+$scss-avatar-style:      bordered !default; // [ plain | bordered ]
+
+$scss-direction:         ltr !default;
+
+$scss-stream-position:   left !default; // [ left | right ]
+
+
+//  Main Layout
+$primary-width:          61.8034%;
+$secondary-width:        38.1966%;
+
+
+//  Colors
+$color-gray-light:            #9C9C9C;
+$color-gray:             #757575;
+$color-gray-dark:        #333;
+
+$color-light:            rgba(0,0,0,.1);
+$color-neutral:          $color-gray;
+$color-primary:          #00b0ff;
+$color-success:          #2FBA34;
+$color-warning:          #ffa726;
+$color-danger:           #e53935;
+
+$color-text:             black;
+$color-icon:             $color-neutral;
+
+$color-link:             #2196f3;
+$color-link-hover:       darken($color-link, 20%);
+
+$color-bg:               #ECF0F1;
+
+
+//  Alert
+$alert:                  #b3e5fc;
+$alert-color:            #2196f3;
+
+$alert-success:          #66bb6a;
+$alert-success-color:    #e8f5e9;
+
+$alert-warning:          #ff7043;
+$alert-warning-color:    #fbe9e7;
+
+$alert-danger:           #ef5350;
+$alert-danger-color:     #ffebee;
+
+
+//  Border
+$border-radius-small:    2px;
+$border-radius:          4px;
+$border-radius-large:    6px;
+
+
+//  Padding
+$padding-small:          8.5px;
+$padding-base:           14px;
+$padding-large:          24px;
+
+
+//  Media Queries
+$xsmall:                 360px;
+$small:                  480px;
+$medium:                 481px;
+$large:                  992px;
+
+
+//  Z-Index
+$zindex: (
+  base:                  10,
+  dropdown:              20,
+  popover:               30,
+  dialog:                200000
+);
+
+
+//  Font
+$font-size-smallest:     1.1rem;
+$font-size-small:        1.2rem;
+$font-size-base:         1.4rem;
+$font-size-large:        2.4rem;
+$font-size:              $font-size-base;
+
+
+//  Toolbar
+$toolbar-color:          #424242;
+$toolbar-color-hover:    black;
+
+$toolbar-bg:             #F5F7F7;
+$toolbar-bg-hover:       lighten($toolbar-bg, 2%);
+
+
+//  Submenu
+$submenu-bg:             #e0e7e8;
+$submenu-color:          #565656;
+
+$submenu-bg-hover:       #f2f5f6;
+$submenu-color-hover:    black;
+
+$submenu-bg-active:      white;
+$submenu-color-active:   black;
+
+
+//  Stream
+$stream-bg:              white;
+
+
+//  Postbox
+$postbox-bg:             rgba(0,0,0,.05);
+$postbox-color:          $color-gray-dark;
+$postbox-color-hover:    black;
+
+
+//  Comment
+$comment-bg:             #F5F5F5;
+
+
+//  Module
+$module-bg:              white;
+
+
+//  Tab
+$tab-bg:                 #E0E7E8;
+$tab-bg-active:          white;
+$tab-bg-content:         white;
+$tab-color:              $color-gray-dark;

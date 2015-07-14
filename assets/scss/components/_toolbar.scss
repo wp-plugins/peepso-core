@@ -1,0 +1,167 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Toolbar.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Toolbar Mobile  */
+.ps-toolbar {
+	margin-bottom: $padding-base;
+	background-color: $toolbar-bg;
+	@extend %box-shadow;
+	> ul {
+		@extend %ps-list;
+		display: table;
+		width: 100%;
+		> li {
+			position: relative;
+			display: table-cell;
+			padding: 0;
+			margin-left: 0;
+			> a {
+				display: block;
+				padding: 10px $padding-small 11px;
+				color: $toolbar-color !important;
+				font-size: 1.3rem;
+				line-height: 1.6rem;
+				text-align: center;
+				&:hover, &:focus, &.active {
+					background-color: $toolbar-bg-hover;
+					color: $toolbar-color-hover !important;
+				}
+			}
+			&:first-child {
+				border-right: 1px solid rgba(0,0,0,.05);
+			}
+			&:last-child {
+				border-left: 1px solid rgba(0,0,0,.05);
+			}
+		}
+	}
+
+	.ps-icon {
+		fill: $toolbar-color;
+	}
+
+	@include media('medium') {
+		display: none;
+	}
+}
+
+.ps-toolbar-toggle {
+	display: bock;
+	padding: 11px $padding-small;
+	border: none;
+	background-color: $toolbar-bg;
+	color: $toolbar-color;
+	font-size: 1.2rem !important;
+	line-height: 1.6rem;
+	&:hover, &:focus, &.active {
+		border: none;
+		background-color: $toolbar-bg-hover;
+		color: $toolbar-color-hover;
+	}
+}
+
+
+/*  Toolbar mobile menu  */
+.ps-toolbar-menu {
+	overflow: hidden;
+	height: 0;
+	margin-top: -13px;
+	margin-bottom: 14px;
+	background-color: $toolbar-bg;
+	@extend %box-shadow;
+
+	> ul {
+		@extend %ps-list;
+		padding-bottom: $padding-base;
+		> li {
+			position: relative;
+			display: block;
+			width: 100%;
+			padding: 0;
+			margin-top: 0;
+			margin-bottom: 0;
+			border-bottom: 1px solid rgba(0,0,0,.08);
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		padding: $padding-small $padding-base;
+		font-size: $font-size-small;
+		line-height: $font-size-small;
+		&:hover, &:focus {
+			background-color: white;
+		}
+
+		&.ps-dropdown-toggle {
+			background-image: url(../../assets/images/caret-sprite.png);
+			background-repeat: no-repeat;
+			background-position: 96% -50%;
+			&.open {
+				background-position: 96% 150%;
+			}
+		}
+	}
+
+	.ps-right {
+		float: none;
+	}
+
+	@include media('medium') {
+		display: none;
+	}
+}
+
+
+/*  Toolbar Desktop  */
+.ps-toolbar-desktop {
+	display: none;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	margin-bottom: $padding-base;
+	background-color: $toolbar-bg;
+	> ul {
+		@extend %ps-list;
+		> li {
+			position: relative;
+			display: inline-block;
+			padding: 0;
+			margin: 0 !important;
+			> a {
+				display: block;
+				padding: 10px $padding-small;
+				color: $toolbar-color !important;
+				font-size: 1.3rem;
+				line-height: 1.6rem;
+				text-decoration: none;
+				&:hover, &:focus, &.active {
+					background-color: $toolbar-bg-hover;
+					color: $toolbar-color-hover !important;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.ps-icon {
+		fill: $toolbar-color;
+	}
+
+	&:after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+
+	@include media('medium') {
+		display: block;
+	}
+}

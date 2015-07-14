@@ -1,0 +1,123 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Button.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Button  */
+.ps-btn {
+	display: inline-block;
+	padding: $padding-small !important;
+	@extend %rounded--small;
+	border: 1px solid rgba(0,0,0,0.1);
+	background: #ECF0F1;
+	color: #424242 !important;
+	font-size: 1.3rem;
+	line-height: $font-size-base;
+	text-align: center;
+	text-decoration: none !important;
+	text-transform: none;
+
+	&:hover, &:focus, &.active {
+		padding: $padding-small !important;
+		border: 1px solid rgba(0,0,0,0.15);
+		background: #ECF0F1;
+		color: black !important;
+		text-decoration: none;
+	}
+
+	&-primary {
+		/* Button Primary */
+		@include button-variant(#fff, $color-primary);
+	}
+	&-success {
+		/* Button Success */
+		@include button-variant(#fff, $color-success);
+	}
+	&-warning {
+		/* Button Warning */
+		@include button-variant(#fff, $color-warning);
+	}
+	&-danger {
+		/* Button Danger */
+		@include button-variant(#fff, $color-danger);
+	}
+}
+
+.ps-button-action,
+.ps-btn-primary,
+.ps-btn-success,
+.ps-btn-warning,
+.ps-btn-danger,
+.ps-btn-login,
+.ps-btn-join {
+	padding: $padding-small;
+	color: white !important;
+	&:hover, &:focus, &.active {
+		padding: $padding-small;
+		color: white !important;
+	}
+}
+
+.ps-btn-login {
+	padding: $padding-small !important;
+	&:hover, &:focus, &.active {
+		padding: $padding-small !important;
+	}
+}
+
+.ps-btn-link {
+	display: inline-block;
+	padding: $padding-small;
+	border: 1px solid transparent;
+	font-size: $font-size-base;
+	line-height: $font-size-base;
+	text-align: center;
+}
+
+.ps-btn-small {
+	padding: 6px $padding-small !important;
+	font-size: $font-size-small;
+	line-height: $font-size-small;
+	&:hover, &:focus, &.active {
+		padding: 6px $padding-small !important;
+	}
+}
+
+.ps-btn-full {
+	width: 100%;
+}
+
+.ps-btn-more {
+	width: 100%;
+	margin-top: $padding-base;
+}
+
+
+/*  Button login  */
+.ps-btn-login {
+	@include button-variant(#fff, $color-primary);
+}
+
+
+/*  Button action  */
+.ps-button-action {
+	@include button-variant(#fff, $color-primary);
+}
+
+
+/*  Button join  */
+.ps-btn-join {
+	@include button-variant(#fff, $color-success);
+	padding: $padding-small*1.5;
+	font-size: $font-size-large/1.5;
+	line-height: 1.6rem;
+}
+
+
+/*  Button group  */
+.ps-btn-group {
+}
