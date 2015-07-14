@@ -1,91 +1,73 @@
-=== PeepSo ===
-Contributors: PeepSo, SpectrOMtech, davejesch
-Donate link: http://www.peepso.com
+=== HaloSocial ===
+Contributors: Halo_Social, Hung Tran, Dmitry Semenov.
 Tags: social networking, community, stream, photos, videos, pages, followers, acl, activity, profiles, messaging, friends, groups, notifications, social, networks, networking, facebook, twitter, chat, like, likes, comments, alerts, privacy, cover photos, avatars, buddypress, social media, sharing, share, activity, network
-Requires at least: 3.5
+Requires at least: WordPress 3.5
 Tested up to: 4.2.2
-Stable tag: 1.0.0-RC4
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 1.0.0-RC2
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-PeepSo is the next-generation of Social Networking plugin for WordPress. It allows you to create a community in seconds, that works and look great right inside your WordPress site.
+HaloSocial is a new powerful Social Network plugin for WordPress. It allows you to create a social network right inside your WordPress site, with features like profiles, stream, sharing, liking, comments, photos, vidoes, and so much more!
 
 == Description ==
 
-PeepSo is a **Social Networking plugin for WordPress**. It allows you to create an **online community** with profiles, activity stream, photos, videos, sharing, likes, comments. Your own **Facebook** in a box!
+Are you wanting to create a sophisticated **social network** right inside your WordPress site? HaloSocial is a complete solution, that works right out of the box. It's perfect for brands, artists, schools/universities, non-profit organizations, interest groups and anyone else who wants to benefit from creating a private community on their WordPress site.
 
-PeepSo core is a **free plugin** which possibilities can be extended by a number of supporting plugins developed and maintained by the same team that brought you PeepSo.
+Allow your members to create **profiles**, connect with **chat**, share **photos** and **videos** on the **stream**, like, comment, share, create groups, events, pages, shops and post classified ads!
 
-= FriendSo =
-**Friends**. This plugin allows friend connections between users. Also introduces a new privacy level **Friends** Only which allows to share information only with friends and not entire community.
+HaloSocial comes in 3 versions: 
 
-= TagSo =
-**Tagging**. This plugin works alongside FriendSo and allows you to tag your friends in status updates. Also allows to tag people in comments, who are not necessarily friends but you’d like to get their attention.
+= Starter = 
+Starter version is **FREE**! It comes with a huge amount of amazing features such as profiles, avaters/cover photos, stream, vidoes, photos, comments, sharing, privacy     Stream, Photo albums, Template overrides, Dynamic SEO, Hover cards and much more
 
-= MsgSo =
-**Messages**. This plugin gives users the option to send private messages between themselves. Messages can be sent to friends, non friends, you can also have a group conversation. 
+= Professional =
+Professional version add another huge set of features: Custom Profiles, Chat, Friends, Follow, Layouts, Events, Groups, Widgets and much more!
 
-= LocSo =
-**Locations**. This is a location plugin that you can use to attach location to your posts in the community.
 
-= PicSo = 
-**Share Photos**. This plugin allows to share photos on the stream. Also adds photo wall to users’ profiles.
-
-= VidSo =
-**Share Videos**. This plugin allows to share videos from the most popular providers on the stream. It too creates a wall of videos in the users’ profiles.
-
-= MoodSo =
-**Moods**. This plugin gives users the option to share how they feel. It attaches the mood to a shared post. 
+= Agency =
+Agency version contains ALL the features. In addition to the feautres that Professional version has, it comes with: Blogs, Pages, Classifieds, Meta tags, Real-time notifications, Labels, ACL 
 
 = More Information =
 
-More plugins are currently being developed to extand PeepSo's functionality.
+Visit the [Halo.Social](http://halo.social/ "Create a community with WordPress")for more information, documentations and support.
 
-All of the plugins supporting the PeepSo core are available on [PeepSo.com](http://peepso.com/ "PeepSo - Social Network Plugin for WordPress") == Installation ==
+== Installation ==
 
-= From your WordPress dashboard =
+Download HaloSocial.
+In the admin area of your WordPress site go to Plugins then Add New
+Press the “Upload Plugin” button
+Chose the downloaded package and click on the “Install Now”
+Activate plugin and follow the installation wizard.
 
-1. Visit 'Plugins > Add New'
-2. Search for ‘PeepSo’
-3. Press install
-4. Activate PeepSo from your Plugins page.
 
+= Once Configured =
 
-= From WordPress.org =
-
-1. Download PeepSo
-2. Navigate to the Admin area of your site.
-3. Go to Plugins > ‘Add New’.
-4. Select ‘Upload Plugin’.
-5. Select the ZIP installation file of PeepSo.
-6. Activate PeepSo from your Plugins page.
+HaloSocial comes with a robust theme-compatibility API that does its best to make every HaloSocial page look and feel right with just-about any WordPress theme. You may need to adjust some styling on your own to make everything look pristine.
+HaloSocial is tested with themes that are readily available for download from WordPress.org, and hundreds more are available from third-party theme authors.
 
 
 == Frequently Asked Questions ==
 
-= Can I use my existing theme? =
 
-Yes! PeepSo was designed from the beginning to be used with your existing theme and does not require a theme designed to work with PeepSo. We have tested PeepSo with several themes and Frameworks already but your theme may require some customization. You can do this by copying template files into a `peepso/` directory within your theme folder and modifying them.
+== Will HaloSocial enable me to create a social network just like Facebook? == 
+ 
+Pretty much. Most of Facebook’s features are also on HaloSocial, including news streams, profiles, events, groups and pages. But HaloSocial also has a number of very useful features that Facebook is missing, such as stores and classified ads. So your platform will be like Facebook… but better.
+ 
+== What are the system requirements for HaloSocial? ==
+ 
+Please visit [this article](http://www.halo.social/requirements "HaloSocia Requirements") for a full description of HaloSocial’s system requirements.
+ 
+== Will HaloSocial work with my theme? ==
+ 
+HaloSocial was tested with over a hundred of the most popular WordPress themes. You can find a full list of 
+[HaloSocial compatible themes here](http://www.halo.social/supported-themes "HaloSocial compatible themes"). If you do find a compatibility issue with your theme, please post a support request on our forum. We’ll try to sort it out for you.
+ 
+== How many users can HaloSocial support? ==
 
+HaloSocial does not impose any limit on the number of users that can register on your site. In theory, you could register as many users as Wordpress can store into the database. So that’s a lot. In practice, the limits will depend on the hosting infrastructure and the servers the site is hosted on.
 
-= Where do I get support for PeepSo? =
-
-You can use the Support Forums here on the [WordPress website](https://wordpress.org/plugins/peepso-core/ "PeepSo on WordPress")
-
-Or on our support forum here on [PeepSo Support](http://peepso.com/support "PeepSo - Social Network Plugin for WordPress") 
-
-= Is there documentation available for PeepSo? =
-
-Yes! You can find documentation on the use of PeepSo and designing themes and extensions for PeepSo at [PeepSo Docs](http://www.peepso.com/documentation-page/ "PeepSo - Social Network Plugin for WordPress") 
-
-= How do I report a bug/problem with PeepSo? =
-
-You can use the Support Forums here on the [WordPress website](https://wordpress.org/plugins/peepso-core/ "PeepSo on WordPress") 
-
-Or on our support forum here on [PeepSo Support](http://peepso.com/support "PeepSo - Social Network Plugin for WordPress") 
 
 == Screenshots ==
-
 1. 
 2. 
 3. 
@@ -96,38 +78,10 @@ Or on our support forum here on [PeepSo Support](http://peepso.com/support "Peep
 8. 
 
 == Changelog ==
-= 1.0.0-RC4 =
-* Dashboard PeepSo Plugins check which are activated.
-* NewRemove ‘Fancybox 2.0′ and use custom code.
-* Videos don’t play in Firefox.
-* Renamed menu items in the backend.
-* Contain the notification popovers and make them scrollable within their own boundaries.
-* On new install, assign proper PeepSo Roles to existing WordPress users.
-* Remove the ‘drag and drop’ cursor from backend options and  the styling.
-* Can’t like an individual photo from a batch upload in modal.
-* Can’t report a picture from modal, when uploaded in a batch
-* Can’t repost a picture from modal, when uploaded in a batch
-* Sending a photo in a private message puts those photos in widgets and under profiles.
-* Remove the option to add videos from PostBox in messages.
-* Remove the privacy option from messages PostBox.
-* Entered message doesn’t stay when switching between video and photos in messages PostBox.
-* Photo attachment to messages breaks message list.
-* Photo thumbnails improvements and optimisation on the Activity Stream.
-* CSS improvements of the Activity Stream.
-* Can’t tag people in comments in modal in photos.
-* Fetching thumbs from websites returns black thumbnail.
-* Compatibility of special characters in name / last name fields.
-* Improved Licensing.
-* Improved PeepSo Versioning.
-* Optimized assets, minified JS.
 
-= 1.0.0-RC1 =
+= 1.0.0-RC2 =
 * Initial release
 
 == Upgrade Notice ==
 * Initial release
-
-
-
-
 
