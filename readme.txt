@@ -12,36 +12,49 @@ PeepSo is the next-generation of Social Networking plugin for WordPress. It allo
 
 == Description ==
 
-PeepSo is a **Social Networking plugin for WordPress**. It allows you to create an **online community** with profiles, activity stream, photos, videos, sharing, likes, comments. Your own **Facebook** in a box!
+[PeepSo.com](http://peepso.com/ "PeepSo - Social Network Plugin for WordPress") is a super-light, free, **social network** plugin for WordPress that allows you to quickly and effortlessly add a social network or an online community, similar to **Facebook** right inside your WordPress site. You’ll get an activity **stream**, **profiles**, photo and video-sharing, location-sharing, **moods**, **messages** and so much more. **Social network for WordPress** - in one single click!
+ 
+The plugin supports the addition of a **social networking** plugin in the main area of your WordPress site. Widgets that display users’ photos, videos and friends are also available on installation and can be placed on any widget position inside your theme, or directly inside PeepSo itself.
 
-PeepSo core is a **free plugin** which possibilities can be extended by a number of supporting plugins developed and maintained by the same team that brought you PeepSo.
+Our primary goal when developing this social networking plugin for WordPress was to provide those who wanted to create a **community** with WordPress an alternative to the popular **BuddyPress**, with a modern look and feel, lots of great features and scalability.
 
-= FriendSo =
-**Friends**. This plugin allows friend connections between users. Also introduces a new privacy level **Friends** Only which allows to share information only with friends and not entire community.
+What sets PeepSo apart from other **social networking** solutions is its light weight and stellar design. PeepSo works right out of the box and within seconds, you can start a **social network**, right inside your WordPress site. There’s no need to hire a developer, mess with code, hack another plugin to make it look and work the way you want it. It simply works.
 
-= TagSo =
-**Tagging**. This plugin works alongside FriendSo and allows you to tag your friends in status updates. Also allows to tag people in comments, who are not necessarily friends but you’d like to get their attention.
+The PeepSo core is totally **free**. We encourage you to install it and see how it works. Keep in mind, some features are not available on the free version. There are currently seven other plugins available for a pretty low price. Installing all of them will give you all the features that PeepSo has to offer. The plugins enable sharing photos on the stream, sharing videos, tagging, locations, messages, friends and more. View the [features and Pricing](http://peepso.com/pricing "PeepSo Pricing”)
+ 
+On the profile page, users can share their profiles on social media sites such as: Facebook, del.icio.us, Digg, StumbleUpon, Blinklist, Google+, Diigo, Myspace, Twitter, Blogmarks, Lifestream, LinkedIn, Newsvine and Google Bookmarks.
+ 
+=== Try the demo ===
+ 
+If you want to see how a **social networking** on WordPress looks live, you can visit our [demo site](http://peepso.com/demo "PeepSo Demo”). You will be able to log in as a real user (username: demo, password: demo) and take PeepSo for a test drive. The demo includes all the premium plugins so you’ll be able to see them all in action.
+ 
+=== Shortcodes ===
+ 
+PeepSo automatically generates pages for you with shortcodes to allow you to start fast. Here’s a list of pages and shortcodes available. Use the shortcodes to display the content in case you’ve deleted the automatically generated page.
+ 
+User Profile - [peepso_profile]
+Recent Activity - [peepso_activity]
+Members - [peepso_members]
+Recover Password - [peepso_recover]
+Site Registration- [peepso_register]
+Messages - [peepso_messages]
+ 
+=== Getting Started ===
+ 
+To get a social network on your WordPress site up and running, follow these steps:
+ 
+Login to your WordPress admin.
+Choose “Plugins”.
+Search for “PeepSo”.
+Click “Install”.
+Go to “Appearance -> Menus”
+Select the menu you’d like to link to your social network.
+Add the page “Recent Activity” to that menu
+Save.
+ 
+Your new **social network** will now be displayed on your site.
 
-= MsgSo =
-**Messages**. This plugin gives users the option to send private messages between themselves. Messages can be sent to friends, non friends, you can also have a group conversation. 
 
-= LocSo =
-**Locations**. This is a location plugin that you can use to attach location to your posts in the community.
-
-= PicSo = 
-**Share Photos**. This plugin allows to share photos on the stream. Also adds photo wall to users’ profiles.
-
-= VidSo =
-**Share Videos**. This plugin allows to share videos from the most popular providers on the stream. It too creates a wall of videos in the users’ profiles.
-
-= MoodSo =
-**Moods**. This plugin gives users the option to share how they feel. It attaches the mood to a shared post. 
-
-= More Information =
-
-More plugins are currently being developed to extand PeepSo's functionality.
-
-All of the plugins supporting the PeepSo core are available on [PeepSo.com](http://peepso.com/ "PeepSo - Social Network Plugin for WordPress") 
 
 == Installation ==
 
