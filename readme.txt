@@ -24,11 +24,11 @@ The PeepSo core is totally **free**. We encourage you to install it and see how 
  
 On the profile page, users can share their profiles on social media sites such as: Facebook, del.icio.us, Digg, StumbleUpon, Blinklist, Google+, Diigo, Myspace, Twitter, Blogmarks, Lifestream, LinkedIn, Newsvine and Google Bookmarks.
  
-=== Try the demo ===
+**Try the demo**
  
 If you want to see how a **social networking** on WordPress looks live, you can visit our [demo site](http://peepso.com/demo "PeepSo Demo”). You will be able to log in as a real user (username: demo, password: demo) and take PeepSo for a test drive. The demo includes all the premium plugins so you’ll be able to see them all in action.
  
-=== Shortcodes ===
+**Shortcodes**
  
 PeepSo automatically generates pages for you with shortcodes to allow you to start fast. Here’s a list of pages and shortcodes available. Use the shortcodes to display the content in case you’ve deleted the automatically generated page.
  
@@ -39,7 +39,7 @@ Recover Password - [peepso_recover]
 Site Registration- [peepso_register]
 Messages - [peepso_messages]
  
-=== Getting Started ===
+**Getting Started**
  
 To get a social network on your WordPress site up and running, follow these steps:
  
