@@ -20,37 +20,37 @@ Our primary goal when developing this social networking plugin for WordPress was
 
 What sets PeepSo apart from other **social networking** solutions is its light weight and stellar design. PeepSo works right out of the box and within seconds, you can start a **social network**, right inside your WordPress site. There’s no need to hire a developer, mess with code, hack another plugin to make it look and work the way you want it. It simply works.
 
-The PeepSo core is totally **free**. We encourage you to install it and see how it works. Keep in mind, some features are not available on the free version. There are currently seven other plugins available for a pretty low price. Installing all of them will give you all the features that PeepSo has to offer. The plugins enable sharing photos on the stream, sharing videos, tagging, locations, messages, friends and more. View the [features and Pricing](http://peepso.com/pricing "PeepSo Pricing”)
+The PeepSo core is totally **free**. We encourage you to install it and see how it works. Keep in mind, some features are not available on the free version. There are currently seven other plugins available for a pretty low price. Installing all of them will give you all the features that PeepSo has to offer. The plugins enable sharing photos on the stream, sharing videos, tagging, locations, messages, friends and more. View the features and Pricing here http://peepso.com/pricing "PeepSo Pricing”.
  
 On the profile page, users can share their profiles on social media sites such as: Facebook, del.icio.us, Digg, StumbleUpon, Blinklist, Google+, Diigo, Myspace, Twitter, Blogmarks, Lifestream, LinkedIn, Newsvine and Google Bookmarks.
  
 **Try the demo**
  
-If you want to see how a **social networking** on WordPress looks live, you can visit our [demo site](http://peepso.com/demo "PeepSo Demo”). You will be able to log in as a real user (username: demo, password: demo) and take PeepSo for a test drive. The demo includes all the premium plugins so you’ll be able to see them all in action.
+If you want to see how a **social networking** on WordPress looks live, you can visit our demo site http://peepso.com/demo "PeepSo Demo”. You will be able to log in as a real user (username: demo, password: demo) and take PeepSo for a test drive. The demo includes all the premium plugins so you’ll be able to see them all in action.
  
 **Shortcodes**
  
 PeepSo automatically generates pages for you with shortcodes to allow you to start fast. Here’s a list of pages and shortcodes available. Use the shortcodes to display the content in case you’ve deleted the automatically generated page.
  
-User Profile - [peepso_profile]
-Recent Activity - [peepso_activity]
-Members - [peepso_members]
-Recover Password - [peepso_recover]
-Site Registration- [peepso_register]
-Messages - [peepso_messages]
+* User Profile - [peepso_profile]
+* Recent Activity - [peepso_activity]
+* Members - [peepso_members]
+* Recover Password - [peepso_recover]
+* Site Registration- [peepso_register]
+* Messages - [peepso_messages]
  
 **Getting Started**
  
 To get a social network on your WordPress site up and running, follow these steps:
  
-Login to your WordPress admin.
-Choose “Plugins”.
-Search for “PeepSo”.
-Click “Install”.
-Go to “Appearance -> Menus”
-Select the menu you’d like to link to your social network.
-Add the page “Recent Activity” to that menu
-Save.
+* Login to your WordPress admin.
+* Choose “Plugins”.
+* Search for “PeepSo”.
+* Click “Install”.
+* Go to “Appearance -> Menus”
+* Select the menu you’d like to link to your social network.
+* Add the page “Recent Activity” to that menu
+* Save.
  
 Your new **social network** will now be displayed on your site.
 
