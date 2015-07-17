@@ -52,7 +52,7 @@ To get a social network on your WordPress site up and running, follow these step
 * Add the page “Recent Activity” to that menu
 * Save.
  
-Your new **social network** will now be displayed on your site.
+Your new **social network** will now be displayed on your site!
 
 
 
