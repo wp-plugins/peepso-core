@@ -107,24 +107,15 @@ You can report problems on the WordPress.org forums here http://wordpress.org/su
 == Changelog ==
 = 1.0.0 =
 * New Add “Register” link to “mini-profile” widget.
-* New Uploaded images quality control settings.
 * Impr Registration confirmation emails need to skip mail queue and be sent immediately.
 * Impr Licensing improvements.
-* Impr Photo attachments in messages only showing up to 5 first images, now showing all.
 * Impr PeepSo Avatars outside of PeepSo.
-* Impr Moods postbox presentation improvements.
-* Impr Location postbox presentation improvements.
 * Fix Blog posts showing under profile sub-pages.
-* Fix Can’t edit caption for photos in a modal window.
-* Fix Can’t edit caption for photos in a modal window.
 * Fix Remove ‘view profile’ link from blocked users listing.
 * Fix Logging in from PeepSo Me widget with wrong credentials doesn’t provide feedback to user.
 * Fix Powered by PeepSo Showing more than once.
 * Fix Likes rating setting fixed for profiles.
-* Fix Bad quality of thumbnails in postbox.
 * Fix PeepSo overriding themes’ styles outside of PeepSo.
-* Fix A ‘cached’ version of comments, likes, edits of photos is shown in modal.
-* Fix A ‘cached’ version of comments, likes, edits of videos is shown in modal.
 * Fix Avatar should NOT change until “done” is clicked.
 * Fix Uploaded avatars not contained by the wrapper.
 * Fix Vimeo videos not playing inline on stream.
