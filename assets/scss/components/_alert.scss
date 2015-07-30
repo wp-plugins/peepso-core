@@ -1,0 +1,40 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Alert.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Alert  */
+.ps-alert {
+	display: block;
+	padding: $padding-small $padding-base;
+	margin-bottom: $padding-base;
+	background-color: $alert;
+	color: $alert-color;
+	font-size: $font-size-small;
+	line-height: 18px;
+	@extend %rounded;
+
+	p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.ps-alert-success {
+	background-color: $alert-success;
+	color: $alert-success-color;
+}
+
+.ps-alert-warning {
+	background-color: $alert-warning;
+	color: $alert-warning-color;
+}
+
+.ps-alert-danger {
+	background-color: $alert-danger;
+	color: $alert-danger-color;
+}

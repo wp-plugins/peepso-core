@@ -1,0 +1,139 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Base.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  PeepSo Wrapper  */
+#peepso-wrap {
+	box-sizing: border-box;
+
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+}
+
+
+/*  PeepSo Container  */
+.peepso {
+	position: relative;
+	height: 100%;
+	min-height: 480px;
+	padding: $padding-base;
+	background-color: $color-bg;
+	font-size: $font-size;
+	line-height: $font-size-base;
+
+	button,
+	input,
+	select,
+	textarea {
+		vertical-align: top;
+	}
+
+	p {
+		font-size: $font-size-small;
+	}
+
+	a {
+		border-bottom: none !important;
+		color: $color-link !important;
+		text-decoration: none !important;
+		outline: none;
+		cursor: pointer;
+
+		&:hover, &:focus, &.active {
+			color: $color-link-hover !important;
+			text-decoration: none !important;
+			outline: none;
+		}
+
+		&.liked,
+		&.liked span {
+			color: $color-link;
+			&:hover {
+				color: $color-link-hover;
+			}
+		}
+	}
+
+	small {
+		font-size: 10px;
+	}
+
+	button {
+		border: none;
+		&.liked,
+		&.liked span {
+			color: $color-link;
+			&:hover {
+				color: $color-link-hover;
+			}
+		}
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		> li {
+			list-style-type: none !important;
+		}
+	}
+
+	img {
+		vertical-align: middle;
+		max-width: 100%;
+	}
+
+	.ps-btn {
+		padding: $padding-small;
+		border: 1px solid rgba(0,0,0,0.1) !important;
+		color: $color-neutral !important;
+		font-weight: normal;
+		text-transform: none;
+		-moz-hyphens: none;
+		word-wrap: normal;
+		&:hover, &:focus, &.active {
+			padding: $padding-small;
+			color: black !important;
+		}
+	}
+
+	.ps-button-action,
+	.ps-btn-primary,
+	.ps-btn-success,
+	.ps-btn-warning,
+	.ps-btn-danger,
+	.ps-btn-login,
+	.ps-btn-join {
+		padding: $padding-small;
+		color: white !important;
+		&:hover, &:focus, &.active {
+			padding: $padding-small;
+			color: white !important;
+		}
+	}
+
+	.ps-btn-small {
+		padding: 6px $padding-small;
+		&:hover, &:focus, &.active {
+			padding: 6px $padding-small;
+		}
+	}
+
+	* {
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	}
+
+	> *:last-child {
+		margin-bottom: 0 !important;
+	}
+
+	@if $scss-direction == rtl {
+		text-align: right !important;
+	}
+}
