@@ -87,14 +87,14 @@ You can use the Support Forums here on the [WordPress website](https://wordpress
 Or on our support forum here on [PeepSo Support](http://peepso.com/support "PeepSo - Social Network Plugin for WordPress") 
 
 == Screenshots ==
-1. Profile.
-2. Notifications
-3. Member Search
-4. Edit Profile
-5. Dashboard
-6. Change Avatar
-7. Privacy
-8. Settings
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
 
 == Changelog ==
 = 1.0.0 =
