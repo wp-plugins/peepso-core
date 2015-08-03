@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: PeepSo, SpectrOMtech, davejesch
 Donate link: http://www.peepso.com
-Tags: social networking, community, stream, photos, videos, pages, followers, acl, activity, profiles, messaging, friends, groups, notifications, social, networks, networking, facebook, twitter, chat, like, likes, comments, alerts, privacy, cover photos, avatars, buddypress, social media, sharing, share, activity, network
+Tags: social networking, community, stream, photos, videos, pages, followers, acl, activity, profiles, messaging, friends, groups, notifications, social, networks, networking, facebook, twitter, chat, like, likes, comments, alerts, privacy, cover photos, avatars, social media, sharing, share, activity, network
 Requires at least: 3.5
 Tested up to: 4.2.3
 Stable tag: trunk
