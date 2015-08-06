@@ -59,7 +59,7 @@ Your new **social network** will now be displayed on your site.
 
 = More Information =
 
-More plugins are currently being developed to extand PeepSo's functionality.
+More plugins are currently being developed to extend PeepSo's functionality.
 
 All of the plugins supporting the PeepSo core are available on [PeepSo.com](http://peepso.com/ "PeepSo - Social Network Plugin for WordPress") 
 
