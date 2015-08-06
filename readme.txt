@@ -52,9 +52,11 @@ To get a social network on your WordPress site up and running, follow these step
 * Select the menu you’d like to link to your social network.
 * Add the page “Recent Activity" to that menu
 * Save.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=jr-U96Umf0g" target="_blank"><img src="http://img.youtube.com/vi/jr-U96Umf0g/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 Here’s a video showing how to install PeepSo.
 [![PeepSo installation via WP backend](http://img.youtube.com/vi/jr-U96Umf0g/0.jpg)](https://www.youtube.com/watch?v=jr-U96Umf0g)
+
  
 Your new **social network** will now be displayed on your site.
 
