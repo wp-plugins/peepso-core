@@ -27,7 +27,7 @@ On the profile page, users can share their profiles on social media sites such a
  
 == Try the demo ==
  
-If you want to see how a **social networking** on WordPress looks live, you can visit our [demo site](http://peepso.com/demo "PeepSo Demo”). You will be able to log in as a real user (username: demo, password: demo) and take PeepSo for a test drive. The demo includes all the premium plugins so you’ll be able to see them all in action.
+If you want to see how a **social networking** on WordPress looks live, you can visit our [demo site](http://peepso.com/demo "PeepSo Demo"). You will be able to log in as a real user (username: demo, password: demo) and take PeepSo for a test drive. The demo includes all the premium plugins so you’ll be able to see them all in action.
  
 == Shortcodes ==
  
@@ -45,12 +45,12 @@ PeepSo automatically generates pages for you with shortcodes to allow you to sta
 To get a social network on your WordPress site up and running, follow these steps:
  
 Login to your WordPress admin.
-Choose “Plugins”.
-Search for “PeepSo”.
-Click “Install”.
-Go to “Appearance -> Menus”
+Choose “Plugins".
+Search for “PeepSo".
+Click “Install".
+Go to “Appearance -> Menus"
 Select the menu you’d like to link to your social network.
-Add the page “Recent Activity” to that menu
+Add the page “Recent Activity" to that menu
 Save.
 
 [![PeepSo installation via WP backend](http://img.youtube.com/vi/jr-U96Umf0g/0.jpg)](https://www.youtube.com/watch?v=jr-U96Umf0g "PeepSo installation via WP backend")
@@ -123,7 +123,7 @@ Or on our support forum here on [PeepSo Support](http://peepso.com/support "Peep
 * Fix Disabled an incomplete Open Graph implementation
 
 = 1.0.0 =
-* New Add “Register” link to “mini-profile” widget.
+* New Add “Register" link to “mini-profile" widget.
 * Impr Registration confirmation emails need to skip mail queue and be sent immediately.
 * Impr Licensing improvements.
 * Impr PeepSo Avatars outside of PeepSo.
@@ -133,7 +133,7 @@ Or on our support forum here on [PeepSo Support](http://peepso.com/support "Peep
 * Fix Powered by PeepSo Showing more than once.
 * Fix Likes rating setting fixed for profiles.
 * Fix PeepSo overriding themes’ styles outside of PeepSo.
-* Fix Avatar should NOT change until “done” is clicked.
+* Fix Avatar should NOT change until “done" is clicked.
 * Fix Uploaded avatars not contained by the wrapper.
 * Fix Vimeo videos not playing inline on stream.
 
