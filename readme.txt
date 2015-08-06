@@ -44,15 +44,16 @@ PeepSo automatically generates pages for you with shortcodes to allow you to sta
  
 To get a social network on your WordPress site up and running, follow these steps:
  
-Login to your WordPress admin.
-Choose “Plugins".
-Search for “PeepSo".
-Click “Install".
-Go to “Appearance -> Menus"
-Select the menu you’d like to link to your social network.
-Add the page “Recent Activity" to that menu
-Save.
+* Login to your WordPress admin.
+* Choose “Plugins".
+* Search for “PeepSo".
+* Click “Install".
+* Go to “Appearance -> Menus"
+* Select the menu you’d like to link to your social network.
+* Add the page “Recent Activity" to that menu
+* Save.
 
+Here’s a video showing how to install PeepSo.
 [![PeepSo installation via WP backend](http://img.youtube.com/vi/jr-U96Umf0g/0.jpg)](https://www.youtube.com/watch?v=jr-U96Umf0g "PeepSo installation via WP backend")
  
 Your new **social network** will now be displayed on your site.
