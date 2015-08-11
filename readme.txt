@@ -13,7 +13,7 @@ PeepSo is the next-generation of Social Networking plugin for WordPress. It allo
 == Description ==
 
 [PeepSo.com](http://peepso.com/ "PeepSo - Social Network Plugin for WordPress")
- is a super-light, free, **social network** plugin for WordPress that allows you to quickly and effortlessly add a social network or an online community, similar to **Facebook** right inside your WordPress site. You'll get an activity **stream**, **profiles**, photo and video-sharing, location-sharing, **moods**, **messages** and so much more. **Social network for WordPress** - in one single click!
+ is a super-light, free, **social network** plugin for WordPress that allows you to quickly and effortlessly add a social network or an online community, similar to **Facebook** right inside your WordPress site. You'll get an activity **stream**, **profiles**, photo and video-sharing, location-sharing, **moods**, **messages** and so much more. **Social network for WordPress** - in just a few clicks!
  
 The plugin supports the addition of a **social networking** plugin in the main area of your WordPress site. Widgets that display users' photos, videos and friends are also available on installation and can be placed on any widget position inside your theme, or directly inside PeepSo itself.
 
