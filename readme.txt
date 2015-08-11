@@ -13,13 +13,13 @@ PeepSo is the next-generation of Social Networking plugin for WordPress. It allo
 == Description ==
 
 [PeepSo.com](http://peepso.com/ "PeepSo - Social Network Plugin for WordPress")
- is a super-light, free, **social network** plugin for WordPress that allows you to quickly and effortlessly add a social network or an online community, similar to **Facebook** right inside your WordPress site. You"ll get an activity **stream**, **profiles**, photo and video-sharing, location-sharing, **moods**, **messages** and so much more. **Social network for WordPress** - in one single click!
+ is a super-light, free, **social network** plugin for WordPress that allows you to quickly and effortlessly add a social network or an online community, similar to **Facebook** right inside your WordPress site. You'll get an activity **stream**, **profiles**, photo and video-sharing, location-sharing, **moods**, **messages** and so much more. **Social network for WordPress** - in one single click!
  
-The plugin supports the addition of a **social networking** plugin in the main area of your WordPress site. Widgets that display users" photos, videos and friends are also available on installation and can be placed on any widget position inside your theme, or directly inside PeepSo itself.
+The plugin supports the addition of a **social networking** plugin in the main area of your WordPress site. Widgets that display users' photos, videos and friends are also available on installation and can be placed on any widget position inside your theme, or directly inside PeepSo itself.
 
 Our primary goal when developing this social networking plugin for WordPress was to provide those who wanted to create a **community** with WordPress an alternative to the popular **BuddyPress**, with a modern look and feel, lots of great features and scalability.
 
-What sets PeepSo apart from other **social networking** solutions is its light weight and stellar design. PeepSo works right out of the box and within seconds, you can start a **social network**, right inside your WordPress site. There"s no need to hire a developer, mess with code, hack another plugin to make it look and work the way you want it. It simply works.
+What sets PeepSo apart from other **social networking** solutions is its light weight and stellar design. PeepSo works right out of the box and within seconds, you can start a **social network**, right inside your WordPress site. There's no need to hire a developer, mess with code, hack another plugin to make it look and work the way you want it. It simply works.
 
 The PeepSo core is totally **free**. We encourage you to install it and see how it works. Keep in mind, some features are not available on the free version. There are currently seven other plugins available for a pretty low price. Installing all of them will give you all the features that PeepSo has to offer. The plugins enable sharing photos on the stream, sharing videos, tagging, locations, messages, friends and more. View the [features and Pricing](http://peepso.com/pricing "PeepSo Pricing")
  
@@ -27,11 +27,11 @@ On the profile page, users can share their profiles on social media sites such a
  
 == Try the demo ==
  
-If you want to see how a **social networking** on WordPress looks live, you can visit our [demo site](http://peepso.com/demo "PeepSo Demo"). You will be able to log in as a real user (username: demo, password: demo) and take PeepSo for a test drive. The demo includes all the premium plugins so you"ll be able to see them all in action.
+If you want to see how a **social networking** on WordPress looks live, you can visit our [demo site](http://peepso.com/demo "PeepSo Demo"). You will be able to log in as a real user (username: demo, password: demo) and take PeepSo for a test drive. The demo includes all the premium plugins so you'll be able to see them all in action.
  
 == Shortcodes ==
  
-PeepSo automatically generates pages for you with shortcodes to allow you to start fast. Here"s a list of pages and shortcodes available. Use the shortcodes to display the content in case you"ve deleted the automatically generated page.
+PeepSo automatically generates pages for you with shortcodes to allow you to start fast. Here's a list of pages and shortcodes available. Use the shortcodes to display the content in case you've deleted the automatically generated page.
  
 * User Profile - [peepso_profile]
 * Recent Activity - [peepso_activity]
@@ -49,7 +49,7 @@ To get a social network on your WordPress site up and running, follow these step
 * Search for "PeepSo".
 * Click "Install".
 * Go to "Appearance -> Menus"
-* Select the menu you"d like to link to your social network.
+* Select the menu you'd like to link to your social network.
 * Add the page "Recent Activity" to that menu
 * Save.
  
@@ -57,7 +57,7 @@ Your new **social network** will now be displayed on your site.
 
 = More Information =
 
-More plugins are currently being developed to extend PeepSo"s functionality.
+More plugins are currently being developed to extend PeepSo's functionality.
 
 All of the plugins supporting the PeepSo core are available on [PeepSo.com](http://peepso.com/ "PeepSo - Social Network Plugin for WordPress") 
 
@@ -129,7 +129,7 @@ Or on our support forum here on [PeepSo Support](http://peepso.com/support "Peep
 * Impr Friends, users search improvements.
 * Fix Notification popovers displaying too high in submenus.
 * Fix Widgets not initializing properly for all licensing scenarios.
-* Fix Profile on toolbar doesn"t show submenus when in /friends or /photos or /videos views.
+* Fix Profile on toolbar doesn't show submenus when in /friends or /photos or /videos views.
 
 = 1.0.1 =
 * Fix Issues with WordPress mobile app login when PeepSo is activated
@@ -143,10 +143,10 @@ Or on our support forum here on [PeepSo Support](http://peepso.com/support "Peep
 * Impr PeepSo Avatars outside of PeepSo.
 * Fix Blog posts showing under profile sub-pages.
 * Fix Remove "view profile" link from blocked users listing.
-* Fix Logging in from PeepSo Me widget with wrong credentials doesn"t provide feedback to user.
+* Fix Logging in from PeepSo Me widget with wrong credentials doesn't provide feedback to user.
 * Fix Powered by PeepSo Showing more than once.
 * Fix Likes rating setting fixed for profiles.
-* Fix PeepSo overriding themes" styles outside of PeepSo.
+* Fix PeepSo overriding themes' styles outside of PeepSo.
 * Fix Avatar should NOT change until "done" is clicked.
 * Fix Uploaded avatars not contained by the wrapper.
 * Fix Vimeo videos not playing inline on stream.
@@ -154,22 +154,22 @@ Or on our support forum here on [PeepSo Support](http://peepso.com/support "Peep
 = 1.0.0-RC4 =
 * Dashboard PeepSo Plugins check which are activated.
 * Remove "Fancybox 2.0′ and use custom code.
-* Videos don"t play in Firefox.
+* Videos don't play in Firefox.
 * Renamed menu items in the backend.
 * Contain the notification popovers and make them scrollable within their own boundaries.
 * On new install, assign proper PeepSo Roles to existing WordPress users.
 * Remove the "drag and drop" cursor from backend options and  the styling.
-* Can"t like an individual photo from a batch upload in modal.
-* Can"t report a picture from modal, when uploaded in a batch
-* Can"t repost a picture from modal, when uploaded in a batch
+* Can't like an individual photo from a batch upload in modal.
+* Can't report a picture from modal, when uploaded in a batch
+* Can't repost a picture from modal, when uploaded in a batch
 * Sending a photo in a private message puts those photos in widgets and under profiles.
 * Remove the option to add videos from PostBox in messages.
 * Remove the privacy option from messages PostBox.
-* Entered message doesn"t stay when switching between video and photos in messages PostBox.
+* Entered message doesn't stay when switching between video and photos in messages PostBox.
 * Photo attachment to messages breaks message list.
 * Photo thumbnails improvements and optimisation on the Activity Stream.
 * CSS improvements of the Activity Stream.
-* Can"t tag people in comments in modal in photos.
+* Can't tag people in comments in modal in photos.
 * Fetching thumbs from websites returns black thumbnail.
 * Compatibility of special characters in name / last name fields.
 * Improved Licensing.
