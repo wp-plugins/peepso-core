@@ -1,0 +1,57 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Video.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Video  */
+.ps-video {
+	@extend %clearfix;
+	margin: -2px;
+}
+
+.ps-video-item {
+	float: left;
+	width: 50%;
+	padding: 2px;
+}
+
+.ps-video-item > a {
+	position: relative;
+	display: block;
+}
+
+.ps-video-item > a .ps-video-play {
+	color: rgba(255,255,255,0.5);
+	transition: all 0.2s ease;
+}
+
+.ps-video-item > a:hover .ps-video-play,
+.ps-video-item > a:focus .ps-video-play {
+	color: white;
+}
+
+.ps-video-play {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -10px;
+	margin-left: -42px;
+	font-size: 60px;
+	line-height: 14px;
+}
+
+.ps-lightbox-object {
+	iframe {
+		display: inline-block;
+	}
+
+	@include media('large') {
+		iframe {
+			height: 100%;
+		}
+	}
+}

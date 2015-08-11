@@ -1,0 +1,124 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Avatar.scss
+//
+//////////////////////////////////////////////////
+
+
+%avatar {
+
+	display: inline-block;
+	margin: 0 !important;
+	line-height: 0;
+
+	@if $scss-avatar-shape == circle {
+		@extend %circle;
+	}
+
+
+	@if $scss-avatar-style == bordered {
+		@extend %bordered;
+		padding: 3px;
+		background: white;
+	}
+
+}
+
+
+/*  Avatar  */
+.ps-avatar {
+	display: inline-block;
+	max-width: 64px;
+	img {
+		@extend %avatar;
+		width: 100%;
+		max-width: 64px;
+		max-height: 64px;
+	}
+	a {
+		display: block;
+	}
+}
+
+.ps-avatar-stream {
+	display: table-cell;
+	width: 48px;
+	img {
+		@extend %avatar;
+		max-width: 48px;
+		max-height: 48px;
+	}
+}
+
+.ps-avatar-comment {
+	display: table-cell;
+	width: 32px;
+	padding-top: 5px;
+
+	img {
+		@extend %avatar;
+		max-width: 32px;
+		max-height: 32px;
+		padding: 0;
+		border-color: transparent;
+	}
+}
+
+
+/*  Focus avatar  */
+.ps-avatar-focus {
+	position: relative;
+	width: 64px;
+	vertical-align: middle;
+
+	img {
+		@extend %avatar;
+		max-width: 64px !important;
+	}
+
+	&:hover {
+		.ps-avatar-change {
+			display: block;
+		}
+	}
+
+	@include media('medium') {
+		width: 100px;
+
+		img {
+			max-width: 100px !important;
+		}
+	}
+}
+
+.ps-avatar-change {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	display: none;
+	font-size: 38px;
+	line-height: 1.5;
+
+	a {
+		color: rgba(0,0,0,.7) !important;
+		&:hover, &:focus {
+			color: rgba(0,0,0,.7) !important;
+			text-decoration: none;
+		}
+	}
+
+	@include media('medium') {
+		top: 3px;
+		left: 3px;
+		font-size: 64px;
+	}
+}
+
+.ps-avatar-crop {
+	display: none;
+	@include media('medium') {
+		display: inline-block;
+	}
+}
