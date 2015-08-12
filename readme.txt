@@ -96,7 +96,7 @@ Or on our support forum here on [PeepSo Support](http://peepso.com/support "Peep
 
 = Is there documentation available for PeepSo? =
 
-Yes! You can find documentation on the use of PeepSo and designing themes and extensions for PeepSo at [PeepSo Docs](http://www.peepso.com/documentation-page/ "PeepSo - Social Network Plugin for WordPress") 
+Yes! You can find documentation on the use of PeepSo and designing themes and extensions for PeepSo at [PeepSo Docs](http://www.peepso.com/wiki/ "PeepSo - Social Network Plugin for WordPress") 
 
 = How do I report a bug/problem with PeepSo? =
 
