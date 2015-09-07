@@ -1,0 +1,35 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Notifications.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Notifications  */
+.ps-notifications {
+	.ps-avatar-comment,
+	.ps-comment-body {
+		padding-top: $padding-small;
+		padding-bottom: $padding-small;
+	}
+}
+
+.ps-notifications-item {
+	.ps-comment-time {
+		margin-left: $padding-base;
+	}
+}
+
+.ps-notifications-check {
+	display: table-cell;
+	padding-right: $padding-base;
+	width: 20px;
+	vertical-align: middle;
+
+	input[type="checkbox"] {
+		margin: auto;
+		padding: 0;
+	}
+}

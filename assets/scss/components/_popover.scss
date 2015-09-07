@@ -1,0 +1,69 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Popover.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Popover  */
+.ps-popover {
+	position: absolute;
+	z-index: map-get($zindex, popover);
+	overflow: hidden;
+	width: 320px;
+	background-color: white;
+	border: 3px solid white;
+
+	@extend %rounded;
+	@extend %box-shadow-dark;
+
+	@include media('large') {
+		width: 400px;
+	}
+
+	@include media('small') {
+		left: 0 !important;
+		width: 100%;
+	}
+}
+
+.ps-popover-list {
+	@extend %ps-list;
+	max-height: 268px;
+	overflow: auto;
+	> li {
+		padding: 0;
+		margin: 0;
+		&:first-child {
+			.ps-comment-item {
+				border-top: none;
+			}
+		}
+	}
+}
+
+.ps-popover-loading {
+	text-align: center;
+}
+
+.ps-popover-actions {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+}
+
+.ps-popover-footer {
+	text-align: center;
+	> a {
+		display: block;
+		padding: $padding-small;
+		background: #ECF0F1;
+		color: #424242 !important;
+		&:hover, &:focus {
+			background: #E0E7E8;
+			color: black !important;
+		}
+	}
+}

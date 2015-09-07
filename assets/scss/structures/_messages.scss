@@ -1,0 +1,301 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Messages.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Messages  */
+.ps-messages {
+	@extend %clearfix;
+	position: relative;
+
+	.ps-avatar-comment {
+		padding-top: 0;
+		vertical-align: middle;
+	}
+}
+
+.ps-messages-item {
+	background-color: rgba(0,0,0,.02);
+
+	.ps-comment-body {
+		font-size: $font-size-small;
+		line-height: $font-size-base;
+		cursor: pointer;
+	}
+
+	.ps-comment-time {
+		margin-left: $padding-base;
+	}
+
+	&.unread {
+		background-color: lighten($color-primary, 45%);
+	}
+}
+
+.ps-messages-check {
+	display: table-cell;
+	padding-right: $padding-base;
+	width: 20px;
+	vertical-align: middle;
+
+	input[type="checkbox"] {
+		margin: auto;
+		padding: 0;
+	}
+}
+
+.ps-messages-title {
+	line-height: 18px;
+}
+
+.ps-messages-options {
+	display: table-cell;
+	width: 100%;
+
+	.ps-select {
+		width: auto;
+		height: 26px;
+	}
+}
+
+.ps-messages-actions {
+	display: table;
+	width: 100%;
+	margin-bottom: $padding-base;
+
+	.ps-messages-check {
+		padding-left: $padding-base;
+	}
+}
+
+.ps-messages-sent {
+	.ps-avatar-comment {
+		display: none;
+	}
+
+	.ps-comment-body {
+		padding-left: 0;
+	}
+}
+
+
+/*  Messages conversation  */
+.ps-messages-chat {
+	.ps-comment-loading {
+		display: none;
+		padding: 10px 0;
+		text-align: center;
+		img {
+			display: inline;
+		}
+	}
+
+	.ps-comment-item {
+		padding-top: $padding-base;
+		padding-bottom: $padding-base;
+		background-color: rgba(0,0,0,.01);
+	}
+
+	.ps-comment-time {
+		margin-left: $padding-base;
+	}
+
+	.ps-avatar-comment {
+		padding-top: 0;
+	}
+
+	.ps-comment-content {
+		line-height: 18px;
+
+		p {
+			margin-bottom: $padding-small !important;
+			font-size: 13px;
+		}
+	}
+}
+
+.ps-messages-postbox {
+	.ps-postbox {
+		margin-bottom: 0;
+	}
+
+	.ps-postbox-action {
+		right: 0;
+		width: 100%;
+		padding-left: 3px;
+		padding-right: 3px;
+		text-align: right;
+	}
+
+	.ps-postbox-action {
+		.ps-checkbox-entertosend {
+			width: 100%;
+			border-top: 1px solid rgba(0,0,0,.05);
+		}
+	}
+
+	.ps-postbox-tab a {
+		position: relative;
+		z-index: map-get($zindex, normal);
+	}
+
+	.ps-postbox-tab-more {
+		margin-bottom: 22px;
+	}
+
+	@include media('medium') {
+		.ps-postbox-action {
+			width: auto;
+		}
+
+		.ps-postbox-action {
+			.ps-checkbox-entertosend {
+				width: auto;
+				padding-right: $padding-small/2;
+				border-top: 0;
+			}
+		}
+
+		.ps-postbox-tab-more {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.ps-messages-item-head {
+	margin-bottom: $padding-small/2;
+
+	> a {
+		vertical-align: middle;
+	}
+}
+
+.ps-messages-header {
+	width: 100%;
+	padding: $padding-base;
+	font-size: $font-size-small;
+	line-height: $font-size-base;
+	
+	@include media('medium') {
+		display: table;
+	}
+}
+
+.ps-messages-participants {
+	display: block;
+
+	@include media('medium') {
+		display: table-cell;
+	}
+}
+
+.ps-messages-add-users {
+	display: block;
+	margin-top: $padding-small;
+
+	@include media('medium') {
+		display: table-cell;
+		margin-top: 0;
+		text-align: right;
+	}
+}
+
+.ps-messages-recipients {
+	padding: $padding-base;
+	.ps-btn {
+		margin-top: $padding-small;
+	}
+}
+
+
+/*  Messages dialogs window  */
+.ps-messages-recipient {
+	display: table;
+	width: 100%;
+	margin-bottom: $padding-small;
+
+	.ps-avatar img {
+		max-width: 20px;
+		max-height: 20px;
+		padding: 0;
+		margin: 0;
+		border: 0;
+		vertical-align: middle;
+	}
+
+	.ps-comment-body {
+		display: inline-block;
+		padding-left: $padding-small/2;
+		font-size: inherit;
+	}
+}
+
+.ps-messages-label {
+	display: table-cell;
+	vertical-align: middle;
+
+	&:first-child {
+		padding-right: $padding-base;
+	}
+
+	&:last-child {
+		width: 100%;
+	}
+}
+
+
+/*  Typing indicator  */
+.ps-typing-indicator {
+  background-color: $color-bg;
+  width: auto;
+  border-radius: 50px;
+  padding: 10px;
+  margin-top: $padding-small;
+  display: table;
+  position: relative;
+  animation: 2s bulge infinite ease-out;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: $color-bg;
+  }
+
+  span {
+    height: 6px;
+    width: 6px;
+    float: left;
+    margin: 0 1px;
+    background-color: $color-link;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.4;
+
+    @for $i from 1 through 3 {
+      &:nth-of-type(#{$i}){
+        animation: 1s blink infinite ($i * .3333s);
+      }
+    }
+  }
+}
+
+@keyframes blink{
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes bulge{
+  50% {
+    transform: scale(1.05);
+  }
+}

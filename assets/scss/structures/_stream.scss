@@ -1,0 +1,167 @@
+//
+//  PeepSo
+//  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+//
+//  File: Stream.scss
+//
+//////////////////////////////////////////////////
+
+
+/*  Stream  */
+.ps-stream {
+	@extend %clearfix;
+	position: relative;
+	margin-bottom: $padding-base;
+	background-color: $stream-bg;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.ps-stream-wrapper {
+}
+
+.ps-stream-container {
+}
+
+
+/*  Stream header  */
+.ps-stream-header {
+	display: table;
+	width: 100%;
+	padding: $padding-base;
+	font-size: $font-size-base/1.1;
+}
+
+.ps-stream-meta {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: $padding-small;
+}
+
+.ps-stream-options {
+	display: table-cell;
+	vertical-align: top;
+	text-align: right;
+	a {
+		padding-left: $padding-small;
+		padding-bottom: $padding-small;
+	}
+	.ps-dropdown-menu {
+		top: 25px;
+		left: auto;
+		right: -14px;
+	}
+}
+
+.ps-stream-user {
+	font-weight: bold;
+}
+
+.ps-stream-reference {
+}
+
+.ps-stream-time {
+	color: $color-neutral;
+	vertical-align: middle;
+
+	a {
+		color: $color-neutral;
+		&:hover, &:focus {
+			color: darken($color-neutral, 8%);
+		}
+	}
+
+	.ps-icon {
+		height: 10px;
+	}
+}
+
+
+/*  Stream body  */
+.ps-stream-body {
+	padding-left: $padding-base;
+	padding-right: $padding-base;
+	padding-bottom: $padding-base;
+	color: $color-gray-dark;
+	word-break: break-all;
+
+	p {
+		margin-top: 0;
+		margin-bottom: $padding-small;
+		font-size: $font-size-base;
+		line-height: 16px;
+	}
+
+	&:empty {
+		display: none;
+	}
+}
+
+.ps-stream-attachment,
+.ps-stream-attachments {
+	p {
+		padding: 0;
+		margin-bottom: $padding-small !important;
+	}
+
+	&:empty {
+		display: none;
+	}
+}
+
+.ps-stream-quote {
+	padding: $padding-base;
+	border-left: 3px solid #E3E5E7;
+	color: $color-gray;
+	p {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	&:empty {
+		display: none;
+	}
+}
+
+
+/*  Stream actions  */
+.ps-stream-actions {
+	padding-left: $padding-base;
+	padding-right: $padding-base;
+	padding-bottom: $padding-small;
+	a {
+		margin-right: $padding-small;
+		font-size: $font-size-small;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	span {
+		display: none;
+	}
+
+	&:empty {
+		display: none;
+		padding: 0;
+	}
+
+	@include media('medium') {
+		span {
+			display: inline-block;
+		}
+	}
+}
+
+
+/*  Stream status  */
+.ps-stream-status {
+	padding: $padding-small $padding-base;
+	background-color: rgba(0,0,0,.02);
+	font-size: $font-size-small;
+	&:empty {
+		padding: 0;
+	}
+}
